@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/social-buttons-3.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-    <body>
+    <body class="login">
         <div class="site-wrapper">
             <div class="site-wrapper-inner">
                 <div class="cover-container">
@@ -26,22 +26,24 @@
                         <li><a href="#">Features</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>-->
+                    </div>
                 </div>
-            </div>
 
           <div class="inner cover">
             <h1 class="cover-heading"></h1>
             <img src="img/notepulllogo.png" />
-            <p class="lead">Pull what matters.</p>
+            <p class="lead" style="color: white;">Pull what matters.</p>
             <p class="lead">
              <form class="form-signin" role="form">
-                <h2 class="form-signin-heading">Please sign in</h2>
+                <h2 class="form-signin-heading" style="color:white;">Please sign in</h2>
                 <input type="email" class="form-control" placeholder="Email address" required autofocus>
                 <input type="password" class="form-control" placeholder="Password" required>
                 <label class="checkbox">
                     <!--<input type="checkbox" value="remember-me"> Remember me-->
                 </label>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <a href="home.html" class="btn btn-block btn-primary">Start Taking Notes!</a>
+                <p class="lead" style="text-align:center; color:white;"><br/>OR</p>
+                <button class="btn btn-facebook"><i class="fa fa-facebook" formaction="http://www.google.com/"></i> | Connect with Facebook</button>
                 <!-- END FORM -->
             </p>
           </div>
@@ -58,6 +60,7 @@
         
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="js/main.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src=js/jquery-1.9.0.min.js></script>
         <script type="text/javascript" src=js/jquery-1.10.1.min.js></script>
         <script src="js/jquery-1.10.2.min.js"></script>
