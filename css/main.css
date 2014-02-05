@@ -241,20 +241,16 @@ body {
   color: #fff;
   background-color: #39B54A;
 }
-.container-fluid {
-		border: 20px solid red;
-		width: 100%;
+html, body, .container-fluid {
+		height: 100%
 }
 .row {
 		height: 100%;
-		border: 10px solid black;
 }
 .main {
-		min-height: 100%;
-		border: 3px solid blue;
+		height: 100%;
 }
 textarea {
-		float: left;
-		height: auto;
-		width: auto;
+		margin-top: 200px;
+		padding: 20%;
 }
