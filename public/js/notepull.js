@@ -21,6 +21,8 @@ function processLogin(e) {
 	$.get("/checkLogin" + "?email=" + email + "&password=" + password, validateLogin);
 }
 
+var tryAgain1 = false;
+
 function validateLogin(json) {
 	console.log(json);
 
@@ -30,5 +32,8 @@ function validateLogin(json) {
 	}
 	else {
 		// add error styles!
+		if (!tryAgain1)
+		$('#emailField').before('<h5 style="color:red">Please try again</h5>');
+		tryAgain1 = true;
 	}
 }
