@@ -50,3 +50,11 @@ span.glyphicon {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+
+#notelist input {
+	width: 100%;
+}
+
+#newnote > input{
+	width: 100%;
+}

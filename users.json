@@ -1,0 +1,16 @@
+{
+	"users": [
+		{
+			"email": "admin@notepull.com",
+			"password": "12345678"
+		},
+		{
+			"email": "user@gmail.com",
+			"password": "password"
+		},
+		{
+			"email": "a@a.a",
+			"password": "password"
+		}
+	]
+}
