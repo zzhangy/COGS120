@@ -7,7 +7,7 @@ exports.checkLogin = function(req, res) {
 	var email = req.query.email;
 	var password = req.query.password;
 	var valid = false;
-	
+
 	for (;i < numUsers; i++) {
 		var user = userArr[i];
 		if (user.email == email && user.password == password) {
@@ -16,6 +16,16 @@ exports.checkLogin = function(req, res) {
 	}
 	
 	res.json({"isUser": valid});
+};
+
+exports.generateRead = function(req, res){
+	var note_string = req.body.noteField;
+	//res.render('read');
+	var json = JSON.parse(note_string);
+	console.log(json);
+	res.render('read', json);
+  //res.render('read', {"fail": false});
+  //res.end();
 };
 
 /*exports.view = function(req, res){

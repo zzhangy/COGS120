@@ -17,19 +17,44 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$('#newnote').click(addNote);
-	//$('#submitNote').click(submitNewNote);
+	$('#submitNote').click(submitNewNote);
 }
 
 function addNote(e) {
-	var newnote = $('<li><input type="text"></input></li>');
+	var newnote = $('<li><input type="text" class="note"></input></li>');
 	var notelist = $('#notelist');
 	notelist.append(newnote);
+
+	$('#notelist li:last-child input').focus();
 }
 
 function submitNewNote(e) {
 	e.preventDefault();
 
+	var notes = $('.note');
+	var numNotes =  notes.length;
+	var note_arr = [];
+	for (var i = 0; i < numNotes; i++) {
+		var note = $(notes[i]).val();
+		var note_json = {"tag":0, "note": note}; // tag is for highlight
+		note_arr.push(note_json);
+	}
+	var date = $('#date').text(); // date\n
+	var title = $('#title').val();
 
+	var note_wrapper = {
+		"date" : date,
+		"title" : title,
+		"notes" : note_arr};
+		//console.log(note_wrapper);
+
+
+	var form = $('#submitForm');
+	var inputdata = $('<input name="noteField" id="noteField" hidden></input>');
+	inputdata.val(JSON.stringify(note_wrapper));
+	form.append(inputdata);
+	form.submit();
+	
 }
 
 // goal later: put focus at end of input

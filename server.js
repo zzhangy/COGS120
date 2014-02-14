@@ -24,7 +24,7 @@ var app = express();
 
 // Print logs to the console and compress pages we send
 app.set('port', process.env.PORT || 3000);
-//app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
 app.use(express.logger('dev'));
@@ -49,7 +49,7 @@ if ('development' == app.get('env')) {
 
 /* ADD ROUTE TO APP */
 app.get('/checkLogin', index.checkLogin);
-//app.get('/login', index.processLogin);
+app.post('/submitNote', index.generateRead);
 //app.get('/failure', index.loginFailure);
 // Example route
 // app.get('/users', user.list);

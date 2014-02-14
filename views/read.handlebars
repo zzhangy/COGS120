@@ -8,10 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
-    
+    <link rel="stylesheet" href="css/note.css">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="css/note.css">
     <!-- Bootstrap Form Helpers -->
     <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
     <!-- Add Responsiveness
@@ -40,25 +39,20 @@
             <div class="col-sm-9 col-md-10 main" id="column2">
                 <div id="notepage">
                     <div id="date-div">
-                        <span id="date">02.07.2014<span>
+                        <span id="date">{{date}}<span>
                     </div>
-                    <br/>
-                    <input id="title" placeholder="Title" type="text" size="35" class="form-control" autofocus/>
-                    <div>
-                        <!--<textarea rows="20" class="form-control"></textarea>-->
-                        <ul id="notelist">
-                        </ul>
-                        <ul>
-                            <li id="newnote">click for new note!</li>
-                        </ul>
-                    </div>
-                    <form id="submitForm" action="/submitNote" method="POST"></form>
+                    <h3>{{title}}</h3>
+                    <ul>
+                    {{#each notes}}
+                        <li class="note">{{note}}</li>
+                    {{/each}}
+                    </ul>
                 </div>  
                 <div id="toolbar">
-                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
-                    <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
-                    <a href="read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
+                    <a href="#"><span class="glyphicon glyphicon-chevron-left" id="prev-icon"></span></a>
+                    <a href="new.html"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="home.html"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a href="#"><span class="glyphicon glyphicon-chevron-right" id="next-icon"></span></a>
                 </div>
             </div>
             
@@ -79,6 +73,8 @@
         <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/note.js"></script>
+        <script>
+            //
+        </script>
     </body>
 </html>
