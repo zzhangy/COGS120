@@ -57,4 +57,9 @@ function submitNewNote(e) {
 	
 }
 
+$(document).ready(function () {
+  $('[data-toggle=offcanvas]').click(function () {
+    $('.row-offcanvas').toggleClass('active')
+  });
+});
 // goal later: put focus at end of input

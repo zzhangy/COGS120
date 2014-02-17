@@ -242,6 +242,10 @@ body {
   color: #fff;
   background-color: #39B54A;
 }
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #39B54A;
+}
 html, body, .container-fluid {
 		height: 100%
 }
