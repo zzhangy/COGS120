@@ -21,7 +21,8 @@ function initializePage() {
 }
 
 function addNote(e) {
-	var newnote = $('<li><input type="text" class="note"></input></li>');
+	var newnote = $('<li><textarea onkeyup="new resize_input(this);" virtual rows="1" class="note"></textarea></li>');
+	//var newnote = $('<li><input type="text" class="note"></input></li>');
 	var notelist = $('#notelist');
 	notelist.append(newnote);
 

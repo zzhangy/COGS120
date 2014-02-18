@@ -49,7 +49,8 @@ if ('development' == app.get('env')) {
 
 /* ADD ROUTE TO APP */
 app.get('/checkLogin', index.checkLogin);
-app.post('/submitNote', index.generateRead);
+app.post('/readNote', index.generateRead);
+app.get('/readNote', index.getRead);
 //app.get('/failure', index.loginFailure);
 // Example route
 // app.get('/users', user.list);

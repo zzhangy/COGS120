@@ -10,13 +10,14 @@ textarea {
 	padding: 0;
 	width: 100%;
 }
-
+/*
 #toolbar {
 	height:4em;
 	background-color: #474747;
-	padding-top: 13px;
+  padding-top: 13px;
 	margin: 0;
 }
+*/
 
 #column2 {
 	height: 100%;
@@ -125,4 +126,39 @@ footer {
     /* own */
     background-color: #474747;
   }
+}
+
+#sidebar {
+  background-color: #474747;
+}
+
+.tag-none {
+  background-color: transparent;
+}
+
+.tag-exam {
+  background-color: #eee;
+}
+
+/* sticky footer */
+
+#column2 {
+  height: 100%;
+  position: relative;
+  margin-top: 0;
+}
+
+#notepage {
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+#toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #474747;
+  padding-top: 13px;
+  margin-left: -15px;
 }

@@ -1,4 +1,5 @@
 var userJson = require('../users.json');
+var noteJson = require('../sampleNote.json');
 
 exports.checkLogin = function(req, res) {
 	//console.log(users);
@@ -18,14 +19,17 @@ exports.checkLogin = function(req, res) {
 	res.json({"isUser": valid});
 };
 
+exports.getRead = function(req, res){
+	var json = noteJson;
+	console.log(json);
+	res.render('read', json);
+};
+
 exports.generateRead = function(req, res){
 	var note_string = req.body.noteField;
-	//res.render('read');
 	var json = JSON.parse(note_string);
 	console.log(json);
 	res.render('read', json);
-  //res.render('read', {"fail": false});
-  //res.end();
 };
 
 /*exports.view = function(req, res){

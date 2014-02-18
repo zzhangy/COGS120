@@ -23,6 +23,18 @@
 </head>
 
     <body>
+        <script>
+        function resize_input(textbox) {
+            //var maxrows=4;
+            var txt=textbox.value;
+            var arraytxt=txt.split('\n');
+            var rows=arraytxt.length;
+            //if (rows < maxrows)
+            //    textbox.rows=maxrows;
+            //else
+                textbox.rows=rows; // not perfect, good for now
+        }
+        </script>
         <div class="container">
             <!-- COPY AND PASTE THIS FOR THE SIDE BAR CODE -->
             <div class="row row-offcanvas row-offcanvas-left">
@@ -41,6 +53,7 @@
                     <p class="pull-left visible-xs">
                         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
                     </p>
+
                     <div id="notepage">
                         <div id="date-div">
                             <span id="date">02.07.2014<span>
@@ -55,7 +68,7 @@
                                 <li id="newnote">click for new note!</li>
                             </ul>
                         </div>
-                        <form id="submitForm" action="/submitNote" method="POST"></form>
+                        <form id="submitForm" action="/readNote" method="POST"></form>
                     </div>  
                     <div id="toolbar">
                         <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
