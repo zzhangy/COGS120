@@ -83,7 +83,9 @@ footer {
 @media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;
-    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0,0,0);
+       -moz-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
     -webkit-transition: all .25s ease-out;
        -moz-transition: all .25s ease-out;
             transition: all .25s ease-out;
