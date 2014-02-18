@@ -18,15 +18,21 @@ $(document).ready(function() {
 function initializePage() {
 	$('#newnote').click(addNote);
 	$('#submitNote').click(submitNewNote);
+	$('#title').keypress(function(e) {
+		if (e.which == 13) {
+			addNote(e);
+		}
+	})
 }
 
 function addNote(e) {
-	var newnote = $('<li><textarea onkeyup="new resize_input(this);" virtual rows="1" class="note"></textarea></li>');
+	var newnote = $('<li><div contenteditable="true" class="note"></di></li>');
+	//var newnote = $('<li><textarea onkeyup="new resize_input(this);" virtual rows="1" class="note"></textarea></li>');
 	//var newnote = $('<li><input type="text" class="note"></input></li>');
 	var notelist = $('#notelist');
 	notelist.append(newnote);
 
-	$('#notelist li:last-child input').focus();
+	$('#notelist li:last-child div').focus();
 }
 
 function submitNewNote(e) {
@@ -36,7 +42,8 @@ function submitNewNote(e) {
 	var numNotes =  notes.length;
 	var note_arr = [];
 	for (var i = 0; i < numNotes; i++) {
-		var note = $(notes[i]).val();
+		var note = $(notes[i]).text();
+		console.log($(notes[i]).html());
 		var note_json = {"tag":0, "note": note}; // tag is for highlight
 		note_arr.push(note_json);
 	}

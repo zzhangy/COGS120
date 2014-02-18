@@ -167,3 +167,25 @@ footer {
   padding-top: 13px;
   margin-left: -15px;
 }
+
+div[contenteditable="true"] {
+  border: 1px solid #ddd;
+  border-top: none;
+  width: 100%;
+  display: inline-block;
+  white-space: pre-wrap;
+  padding: 3px;
+}
+
+div[contenteditable="true"]:focus {
+  background-color: #f6f6f6;
+  outline: none;
+}
+
+#newnote {
+  border: 1px dashed #ddd;
+}
+
+#notelist li:first-child div {
+  border-top: 1px solid #ddd;
+}
