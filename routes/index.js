@@ -32,6 +32,19 @@ exports.generateRead = function(req, res){
 	res.render('read', json);
 };
 
+exports.editNote = function(req, res){
+	var json = noteJson;
+	console.log('------');
+	console.log(json);
+	res.render('edit', json);
+};
+
+exports.openFolder = function(req, res){
+	// folder json!
+
+	res.render('folder');
+};
+
 /*exports.view = function(req, res){
   res.render('index', {"fail": false});
 };

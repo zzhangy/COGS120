@@ -5,7 +5,12 @@
 }
 
 */
-
+function current_date() {
+            var d = new Date();
+            return (d.getMonth()+1) + "/" +
+                        d.getDate() + "/" +
+                        d.getFullYear();
+}
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -22,7 +27,10 @@ function initializePage() {
 		if (e.which == 13) {
 			addNote(e);
 		}
-	})
+	});
+	// consider for notes too! but need to attach handler when creating
+	$('#addNewButton').click(addNote);
+	$('#date').text(current_date());
 }
 
 function addNote(e) {

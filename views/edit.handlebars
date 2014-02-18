@@ -23,18 +23,6 @@
 </head>
 
     <body>
-        <script>
-        function resize_input(textbox) {
-            //var maxrows=4;
-            var txt=textbox.value;
-            var arraytxt=txt.split('\n');
-            var rows=arraytxt.length;
-            //if (rows < maxrows)
-            //    textbox.rows=maxrows;
-            //else
-                textbox.rows=rows; // not perfect, good for now
-        }
-        </script>
         <div class="container">
             <!-- COPY AND PASTE THIS FOR THE SIDE BAR CODE -->
             <div class="row row-offcanvas row-offcanvas-left">
@@ -56,13 +44,18 @@
 
                     <div id="notepage">
                         <div id="date-div">
-                            <span id="date"><span>
+                            <span id="date">{{date}}<span>
                         </div>
                         <br/>
-                        <input id="title" placeholder="Title" type="text" size="35" class="form-control" autofocus/>
+                        <input id="title" placeholder="Title" type="text" size="35" class="form-control" value="{{title}}"/>
                         <div>
                             <!--<textarea rows="20" class="form-control"></textarea>-->
                             <ul id="notelist">
+                                {{#each notes}}
+                                    <li>
+                                        <div contenteditable="true" class="note {{tag}}">{{note}}</div>
+                                    </li>
+                                {{/each}}
                             </ul>
                             <ul>
                                 <li id="newnote"></li>
@@ -95,8 +88,5 @@
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script src="js/note.js"></script>
-        <script>
-            addNote();
-        </script>
     </body>
 </html>

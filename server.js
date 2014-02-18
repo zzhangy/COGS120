@@ -51,6 +51,8 @@ if ('development' == app.get('env')) {
 app.get('/checkLogin', index.checkLogin);
 app.post('/readNote', index.generateRead);
 app.get('/readNote', index.getRead);
+app.get('/folder', index.openFolder);
+app.get('/editNote', index.editNote);
 //app.get('/failure', index.loginFailure);
 // Example route
 // app.get('/users', user.list);
