@@ -2,10 +2,6 @@
 	float: right;
 }
 
-#notepage {
-	text-align: left;
-}
-
 textarea {
 	padding: 0;
 	width: 100%;
@@ -87,6 +83,7 @@ footer {
 @media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;
+    -webkit-transform: translateZ(0);
     -webkit-transition: all .25s ease-out;
        -moz-transition: all .25s ease-out;
             transition: all .25s ease-out;
@@ -151,6 +148,12 @@ footer {
 #notepage {
   height: 100%;
   margin-bottom: 50px;
+  text-align: left;
+}
+
+#notepageRead {
+  height: 100px;
+  text-align: left;
 }
 
 #toolbar {
