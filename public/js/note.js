@@ -15,7 +15,9 @@ function current_date() {
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-
+	$(".btn").click(function(){
+	                $("#myModal").modal('show');
+	            });
 	// add a new note!
 })
 
