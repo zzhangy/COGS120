@@ -63,11 +63,24 @@ exports.editNote = function(req, res){
 	res.render('edit', note);
 };
 
-exports.openFolder = function(req, res){
+exports.viewFolder = function(req, res){
 	// folder json!
-	var note_id = req.params.note;
-	var folder_id = req.params.folder;
-	res.render('folder');
+	var folder_string = req.params.folder;
+	var folder_id = parseInt(folder_string, 10);
+	var folders = folderJson['folders'];
+	var folder = folders[folder_id];
+	folder.id = folder_id;
+	console.log(folder);
+	console.log('----');
+	res.render('folder', folder);
+};
+
+exports.viewFolders = function(req, res){
+	// folder json!
+
+	var folders = folderJson;
+console.log(folders);
+	res.render('home', folders);
 };
 
 /*exports.view = function(req, res){
