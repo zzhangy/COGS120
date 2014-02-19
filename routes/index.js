@@ -58,7 +58,17 @@ exports.editNote = function(req, res){
 
 	var folders = folderJson['folders'];
 	var note = folders[folder_id].folder[note_id];
-
+	var newnote = {
+			"date": "02/14/2014",
+			"title": "COGS 120 Week 8 new",
+			"notes": [
+				{ "tag": "0", "note": "Hallelujah"},
+				{ "tag": "1", "note": "QUIZ on Tuesday! Watch videos before class  alalalallalal baoisehfoenlfljoiej iojijoisdj fods well\nnewline yay"},
+				{ "tag": "0", "note": "why whitespace? can be used for grouping, pay attention to details"}
+			]
+		};
+folders[0].folder.push(newnote);
+	console.log('----');
 	//var json = noteJson; // error-format?	
 	res.render('edit', note);
 };
@@ -71,7 +81,6 @@ exports.viewFolder = function(req, res){
 	var folder = folders[folder_id];
 	folder.id = folder_id;
 	console.log(folder);
-	console.log('----');
 	res.render('folder', folder);
 };
 
