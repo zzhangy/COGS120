@@ -1,5 +1,6 @@
 var userJson = require('../users.json');
 var noteJson = require('../sampleNote.json');
+var folderJson = require('../folders.json');
 
 exports.checkLogin = function(req, res) {
 	//console.log(users);
@@ -32,16 +33,40 @@ exports.generateRead = function(req, res){
 	res.render('read', json);
 };
 
+exports.readNote = function(req, res){
+	var note_string   = req.params.note;
+	var folder_string = req.params.folder;
+
+	var note_id = parseInt(note_string, 10);// check if isNan(note_id) => error, 404?
+	var folder_id = parseInt(folder_string, 10);
+	//console.log ((typeof note_id) + " " + (typeof folder_id)); //number
+
+	var folders = folderJson['folders'];
+	var note = folders[folder_id].folder[note_id];
+
+	//var json = noteJson; // error-format?	
+	res.render('read', note);
+};
+
 exports.editNote = function(req, res){
-	var json = noteJson;
-	console.log('------');
-	console.log(json);
-	res.render('edit', json);
+	var note_string   = req.params.note;
+	var folder_string = req.params.folder;
+
+	var note_id = parseInt(note_string, 10);// check if isNan(note_id) => error, 404?
+	var folder_id = parseInt(folder_string, 10);
+	//console.log ((typeof note_id) + " " + (typeof folder_id)); //number
+
+	var folders = folderJson['folders'];
+	var note = folders[folder_id].folder[note_id];
+
+	//var json = noteJson; // error-format?	
+	res.render('edit', note);
 };
 
 exports.openFolder = function(req, res){
 	// folder json!
-
+	var note_id = req.params.note;
+	var folder_id = req.params.folder;
 	res.render('folder');
 };
 

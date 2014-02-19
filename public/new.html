@@ -64,9 +64,10 @@
                             <!--<textarea rows="20" class="form-control"></textarea>-->
                             <ul id="notelist">
                             </ul>
-                            <ul>
-                                <li id="newnote"></li>
-                            </ul>
+                            <!--<ul id="newnotelist">
+                                <li id="newnote"><div>&nbsp;</div></li>
+                            </ul>-->
+                            <span id="newnote">+</span>
                         </div>
                         <form id="submitForm" action="/readNote" method="POST"></form>
                     </div>  
@@ -95,8 +96,5 @@
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script src="js/note.js"></script>
-        <script>
-            addNote();
-        </script>
     </body>
 </html>

@@ -49,10 +49,11 @@ if ('development' == app.get('env')) {
 
 /* ADD ROUTE TO APP */
 app.get('/checkLogin', index.checkLogin);
-app.post('/readNote', index.generateRead);
-app.get('/readNote', index.getRead);
-app.get('/folder', index.openFolder);
-app.get('/editNote', index.editNote);
+app.post('/readNote', index.generateRead); //submitting
+app.get('/readNote', index.getRead); //read sample note
+app.get('/read/:folder/:note', index.readNote);
+app.get('/folder/:folder/:note', index.openFolder);
+app.get('/edit/:folder/:note', index.editNote);
 //app.get('/failure', index.loginFailure);
 // Example route
 // app.get('/users', user.list);

@@ -15,6 +15,8 @@ function current_date() {
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
+	// add a new note!
 })
 
 /*
@@ -25,7 +27,9 @@ function initializePage() {
 	$('#submitNote').click(submitNewNote);
 	$('#title').keypress(function(e) {
 		if (e.which == 13) {
-			addNote(e);
+			var notes = $('.note');
+			if (notes.length == 0)
+				addNote(e);
 		}
 	});
 	// consider for notes too! but need to attach handler when creating
@@ -34,7 +38,7 @@ function initializePage() {
 }
 
 function addNote(e) {
-	var newnote = $('<li><div contenteditable="true" class="note"></di></li>');
+	var newnote = $('<li><div contenteditable="true" class="note" data-tag="0"></di></li>');
 	//var newnote = $('<li><textarea onkeyup="new resize_input(this);" virtual rows="1" class="note"></textarea></li>');
 	//var newnote = $('<li><input type="text" class="note"></input></li>');
 	var notelist = $('#notelist');
@@ -52,7 +56,8 @@ function submitNewNote(e) {
 	for (var i = 0; i < numNotes; i++) {
 		var note = $(notes[i]).text();
 		console.log($(notes[i]).html());
-		var note_json = {"tag":0, "note": note}; // tag is for highlight
+		var tag = $(notes[i]).data('tag');
+		var note_json = {"tag": tag, "note": note}; // tag is for highlight
 		note_arr.push(note_json);
 	}
 	var date = $('#date').text(); // date\n

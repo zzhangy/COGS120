@@ -131,7 +131,7 @@ footer {
 #sidebar {
   background-color: #474747;
 }
-
+/*
 .tag-none {
   background-color: transparent;
 }
@@ -139,7 +139,7 @@ footer {
 .tag-exam {
   background-color: #eee;
 }
-
+*/
 /* sticky footer */
 
 #column2 {
@@ -179,14 +179,36 @@ div[contenteditable="true"] {
 }
 
 div[contenteditable="true"]:focus {
-  background-color: #f6f6f6;
-  outline: none;
-}
-
-#newnote {
-  border: 1px dashed #ddd;
+  /*outline: none;*/
 }
 
 #notelist li:first-child div {
   border-top: 1px solid #ddd;
+}
+
+#newnote {
+  font-size: medium;
+  font-weight: bold;
+  padding-left: 24px;
+}
+/*
+    #noteholder {
+      border: 1px solid #ddd;
+      width: 94%;
+      float: right;
+    }*/
+
+/* how to change colors as a user */
+
+li[data-tag="0"] {
+  background-color: transparent;
+}
+
+div[data-tag="1"] {
+  background-color: #ff0;
+}
+
+li div {
+  display: inline-block;
+  padding: 1px 5px;
 }
