@@ -79,18 +79,12 @@
                                         <h4 class="modal-title">{{this.folder_name}}</h4>
                                     </div>
                                     <div class="modal-body">
+                                        {{#each folder}}
                                         <div id="notepageRead">
-                                            <div id="date-div">
-                                                <span id="date-read">{{date}}<span>
-                                            </div>
-                                            <h3>{{title}}</h3>
-                                            <ul>
-                                            {{#each notes}}
-                                                <!--<li class="note">{{note}}</li>-->
-                                                <li><div class="note {{tag}}" data-tag="{{tag}}">{{note}}</div></li>
-                                            {{/each}}
-                                            </ul>
+                                            <a class="note_file" href="/read/{{id}}/{{@index}}"><h3>{{title}}</h3></a>
+                                            <br>
                                         </div>
+                                        {{/each}}
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-success">Create</button>
