@@ -2,6 +2,13 @@ var userJson = require('../users.json');
 var noteJson = require('../sampleNote.json');
 var folderJson = require('../folders.json');
 
+var deletedFolder = {};
+var deletedNote = {};
+var deletedLine = {};
+var deletedFolderId = 0,
+	deletedNoteId = 0,
+	deletedLineId = 0; // important: where is the message going to appear at?
+
 exports.checkLogin = function(req, res) {
 	//console.log(users);
 	var userArr = userJson.users;
@@ -20,6 +27,55 @@ exports.checkLogin = function(req, res) {
 	res.json({"isUser": valid});
 };
 
+function updateFolderDate(date_string, folder_id) {
+	var this_date = new Date(date_string); // delete?
+	var last_updated = folderJson['folders'][folder_id].last_updated;
+	var date_updated = new Date(last_updated);
+
+	var time_now = this_date.getTime();
+	var time_folder = date_updated.getTime();
+	if (!isNaN(time_now) && !isNaN(time_folder)) {
+		if (time_now > time_folder)
+			folderJson['folders'][folder_id].last_updated = date_string;
+	}
+}
+
+function getFolderDate(folder_id) {
+	var folder = folderJson['folders'][folder_id].folder;
+	var folder_length = folder.length;
+	if (folder_length > 0) {
+		var latest_date = folder[0].date;
+		var time_latest = (new Date(folder[0].date)).getTime();
+		//if nan, report error?
+		if (!isNaN(time_latest)) {
+			for (var i=1; i<folder_length; ++i) {
+				var this_date = folder[i].date;
+				var time_this = (new Date(this_date)).getTime();
+				if (!isNaN(time_this))
+					if (time_this > time_latest) {
+						time_latest = time_this;
+						latest_date = this_date;
+					}
+			}
+		}
+
+		folderJson['folders'][folder_id].last_updated = latest_date;
+	}
+}
+
+exports.deleteFolder = function(req, res){
+	var folder_string = req.params.folder;
+	var folder_id = parseInt(folder_string, 10); //check Nan
+
+	// delete and save
+	var deleted_folder_arr = folderJson['folders'].splice(folder_id, 1);
+	if (deleted_folder_arr.length > 0) {
+		deletedFolder = deleted_folder_arr[0];
+	}
+
+	res.redirect('/home');
+};
+
 exports.getRead = function(req, res){
 	var json = noteJson;
 	console.log(json);
@@ -31,6 +87,100 @@ exports.generateRead = function(req, res){
 	var json = JSON.parse(note_string);
 	console.log(json);
 	res.render('read', json);
+};
+
+function current_date() {
+            var d = new Date();
+            //return d.toDateString();
+            return (d.getMonth()+1) + "/" +
+                        d.getDate() + "/" +
+                        d.getFullYear();
+}
+
+exports.newFolder = function(req, res){
+	res.render('newFolder');
+};
+
+exports.addFolder = function(req, res){
+	var folder_name = req.body.folder_name;
+	var date = current_date();
+	var folder_json = {
+		'folder_name': folder_name,
+		'last_updated': date,
+		'folder': []
+	};
+
+	//var newfolder_id = folderJson['folders'].length;
+	folderJson['folders'].push(folder_json);
+
+	//res.redirect('/folder/' + newfolder_id);
+	res.redirect('/home');
+};
+
+exports.submitEditFolder = function(req, res){
+	var folder_name = req.body.folder_name;
+	var folder_string = req.params.folder;
+	var folder_id = parseInt(folder_string, 10); //check Nan
+
+	folderJson['folders'][folder_id].folder_name = folder_name;
+
+	//res.redirect('/folder/' + folder_id);
+	res.redirect('/edit/' + folder_id);
+};
+
+exports.editFolder = function(req, res){
+	var folder_string = req.params.folder;
+	var folder_id = parseInt(folder_string, 10); //check Nan
+
+	var folders = folderJson['folders'];
+	var folder = folders[folder_id];
+	folder.id = folder_id;
+
+	res.render('editFolder', folder);
+};
+
+exports.newNote = function(req, res){
+	var folder_string = req.params.folder;
+	var folder_id = parseInt(folder_string, 10); //check Nan
+	res.render('new', {'id': folder_id});
+};
+
+exports.addNote = function(req, res){
+	var folder_string = req.params.folder;
+	var folder_id = parseInt(folder_string, 10); //check if Nan
+	var note_string = req.body.noteField;
+	var json = JSON.parse(note_string);
+
+	var folders = folderJson['folders'];
+	var newnote_id = folders[folder_id].folder.length;
+	folders[folder_id].folder.push(json);
+	updateFolderDate(json.date, folder_id);
+	//console.log(json);
+	//console.log(newnote_id);
+	//console.log(folders[folder_id]);
+	//console.log('/read/' + folder_id + '/' + newnote_id);
+	res.redirect('/read/' + folder_id + '/' + newnote_id);
+};
+
+exports.submitEditNote = function(req, res){
+	var note_string   = req.params.note;
+	var folder_string = req.params.folder;
+	var folder_id = parseInt(folder_string, 10); //check if Nan
+	var note_id = parseInt(note_string, 10);
+	var note_jstring = req.body.noteField;
+	var json = JSON.parse(note_jstring);
+
+	var folders = folderJson['folders'];
+	//var newnote_id = folders[folder_id].folder.length;
+	folders[folder_id].folder[note_id] = json;
+	updateFolderDate(json.date, folder_id);
+
+	//console.log(json);
+	//console.log(folders[folder_id]);
+	//console.log('/read/' + folder_id + '/' + note_id);
+
+	//res.redirect('/read/' + folder_id + '/' + note_id);
+	res.redirect('/edit/' + folder_id + '/' + note_id);
 };
 
 exports.readNote = function(req, res){
@@ -58,6 +208,7 @@ exports.editNote = function(req, res){
 
 	var folders = folderJson['folders'];
 	var note = folders[folder_id].folder[note_id];
+	/* ER MA GOD IT WORKS HALLEFKINLUJAHHHH
 	var newnote = {
 			"date": "02/14/2014",
 			"title": "COGS 120 Week 8 new",
@@ -69,9 +220,55 @@ exports.editNote = function(req, res){
 		};
 folders[0].folder.push(newnote);
 	console.log('----');
+	*/
 	//var json = noteJson; // error-format?	
+	note.f_id = folder_id;
+	note.n_id = note_id;
 	res.render('edit', note);
 };
+
+exports.deleteNote = function(req, res){
+	var note_string   = req.params.note;
+	var folder_string = req.params.folder;
+
+	var note_id = parseInt(note_string, 10);// check if isNan(note_id) => error, 404?
+	var folder_id = parseInt(folder_string, 10);
+
+	var folders = folderJson['folders'];
+	var deleted_note_arr = folders[folder_id].folder.splice(note_id, 1); // only if exist
+	
+	// save deleted note!
+	if (deleted_note_arr.length > 0) {
+		deletedNote = deleted_note_arr[0];
+	}
+	// check error if none exist, or show empty page
+	getFolderDate(folder_id);
+
+// disply undo message 
+	res.redirect('/folder/' + folder_id);
+};
+
+exports.deleteNoteLine = function(req, res){
+	var note_string   = req.params.note;
+	var folder_string = req.params.folder;
+	var note_num_string = req.params.note_num;
+
+	var note_id = parseInt(note_string, 10);// check if isNan(note_id) => error, 404?
+	var folder_id = parseInt(folder_string, 10);
+	var note_num = parseInt(note_num_string, 10);
+
+	var folders = folderJson['folders'];
+	var note = folders[folder_id].folder[note_id].notes.splice(note_num, 1); // only if exist
+	// check error if none exist, or show empty page
+
+// disply undo message 
+	res.redirect('/read/' + folder_id + '/' + note_id);
+};
+
+function parseIfInt(num_string) {
+	var maybe_num = parseInt(num_string);
+	// check if NaN
+}
 
 exports.viewFolder = function(req, res){
 	// folder json!
@@ -80,7 +277,6 @@ exports.viewFolder = function(req, res){
 	var folders = folderJson['folders'];
 	var folder = folders[folder_id];
 	folder.id = folder_id;
-	console.log(folder);
 	res.render('folder', folder);
 };
 
@@ -91,34 +287,3 @@ exports.viewFolders = function(req, res){
 console.log(folders);
 	res.render('home', folders);
 };
-
-/*exports.view = function(req, res){
-  res.render('index', {"fail": false});
-};
-
-exports.processLogin = function(req, res) {
-	if (validateLogin(req,res)) {
-		console.log("logging in to home");
-		res.statusCode = 302;
-				res.redirect("/failure");
-
-		//res.setHeader('Location', "/signup.html");
-		res.end();
-	}
-	else {
-		// error // fix later
-		res.statusCode = 302;
-		res.setHeader('Location', "/login/failure");
-		res.end();
-	}
-};
-
-function validateLogin(request, response) {
-	//return true;
-	return true;
-}
-
-exports.loginFailure = function(req,res) {
-	console.log("FAIL ------------");
-	res.render('index', {"fail": true});
-};*/

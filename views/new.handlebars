@@ -23,6 +23,18 @@
 </head>
 
     <body>
+        <script>
+        function resize_input(textbox) {
+            //var maxrows=4;
+            var txt=textbox.value;
+            var arraytxt=txt.split('\n');
+            var rows=arraytxt.length;
+            //if (rows < maxrows)
+            //    textbox.rows=maxrows;
+            //else
+                textbox.rows=rows; // not perfect, good for now
+        }
+        </script>
         <div class="container">
             <!-- COPY AND PASTE THIS FOR THE SIDE BAR CODE -->
             <div class="row row-offcanvas row-offcanvas-left">
@@ -41,31 +53,51 @@
                     <p class="pull-left visible-xs">
                         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
                     </p>
-                    <!--<div id="notepageRead">
-                    <div id="date-div">
-                        <span id="date">{{date}}<span>
-                    </div>
-                    <h3>{{title}}</h3>
-                    <ul>
-                    {{#each notes}}
-                        <li class="note {{tag}}">{{note}}</li>
-                    {{/each}}
-                    </ul>
-                    </div>-->
-                    <!--<div id="toolbar">
-                        <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+
+                    <div id="notepage">
+                        <div id="date-div">
+                            <span id="date"><span>
+                        </div>
+                        <br/>
+                        <input id="title" placeholder="Title" type="text" size="35" class="form-control" autofocus/>
+                        <div>
+                            <!--<textarea rows="20" class="form-control"></textarea>-->
+                            <ul id="notelist">
+                            </ul>
+                            <!--<ul id="newnotelist">
+                                <li id="newnote"><div>&nbsp;</div></li>
+                            </ul>-->
+                            <span id="newnote">+</span>
+                        </div>
+                        <form id="submitForm" action="/add/{{id}}" method="POST"></form>
+                    </div>  
+                    <div id="toolbar">
+                        <a href="#" id="addNewButton"><span class="glyphicon glyphicon-pencil"></span></a>
                         <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#" class="btn btn-lg btn-primary">Launch Demo Modal</a>
+                        
+                        <!-- Modal HTML -->
+                        <div id="myModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Confirmation</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Do you want to save changes you made to document before closing?</p>
+                                        <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
-                        <a href="read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
-                    </div>-->
-                    <div>
-                        <h3>{{folder_name}}</h3><span>updated {{last_updated}}</span>
-                        <ul>
-                        {{#each folder}}
-                            <!--<li class="note">{{note}}</li>-->
-                            <li><a class="note_file" href="/read/{{../id}}/{{@index}}">{{this.title}}</a></li>
-                        {{/each}}
-                        </ul>
+                        <a href="/read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
                     </div>
                 </div>
             
@@ -85,6 +117,7 @@
         <script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
         <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
         <script src="/js/note.js"></script>
     </body>
 </html>

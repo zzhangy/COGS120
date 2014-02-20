@@ -58,15 +58,24 @@
                         <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
                         <a href="read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
                     </div>-->
-                    <div>
-                        <h3>{{folder_name}}</h3><span>updated {{last_updated}}</span>
+                    <form id="folderForm" action="/edit/{{id}}" method="POST">
+                        <div class="form-group">
+                          <label for="folder_name">Name:</label>
+                          <input id="folder_name" name="folder_name" placeholder="Folder Name" type="text" size="35" class="form-control" value="{{folder_name}}"/>
+                        </div>
+                        <span>updated {{last_updated}}</span>
                         <ul>
                         {{#each folder}}
                             <!--<li class="note">{{note}}</li>-->
-                            <li><a class="note_file" href="/read/{{../id}}/{{@index}}">{{this.title}}</a></li>
+                            <li><a class="note_file" href="/delete/{{../id}}/{{@index}}">{{this.title}}</a></li>
                         {{/each}}
                         </ul>
-                    </div>
+                        <input type="submit" id="submitBtn" class="btn btn-default submitButton" value="Update folder"></input>
+                    </form>
+
+                    <form id="deleteForm" action="/delete/{{id}}" method="POST">
+                        <input type="submit" id="deleteBtn" class="btn btn-default submitButton" value="Delete folder"></input>
+                    </form>
                 </div>
             
         <!-- testing toolbar right now

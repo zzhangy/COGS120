@@ -41,41 +41,15 @@
                     <p class="pull-left visible-xs">
                         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
                     </p>
-                    <!--<div id="notepageRead">
-                    <div id="date-div">
-                        <span id="date">{{date}}<span>
-                    </div>
-                    <h3>{{title}}</h3>
-                    <ul>
-                    {{#each notes}}
-                        <li class="note {{tag}}">{{note}}</li>
-                    {{/each}}
-                    </ul>
-                    </div>-->
-                    <!--<div id="toolbar">
-                        <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
-                        <a href="read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
-                    </div>-->
-                    <div>
-                        <h3>{{folder_name}}</h3><span>updated {{last_updated}}</span>
-                        <ul>
-                        {{#each folder}}
-                            <!--<li class="note">{{note}}</li>-->
-                            <li><a class="note_file" href="/read/{{../id}}/{{@index}}">{{this.title}}</a></li>
-                        {{/each}}
-                        </ul>
-                    </div>
+                    <form id="folderForm" action="/add" method="POST">
+                        <div class="form-group">
+                          <label for="folder_name">Name:</label>
+                          <input id="folder_name" name="folder_name" placeholder="Folder Name" type="text" size="35" class="form-control" autofocus/>
+                        </div>
+                        <input type="submit" id="submitBtn" class="btn btn-default submitButton" value="Add folder"></input>
+                    </form>
+                    
                 </div>
-            
-        <!-- testing toolbar right now
-            <div class="mastfoot">
-                    <div class="inner">
-                        <p style="color: black; text-align: center;">Created by Anindya Basu, Helena Qin, Yalin Zhang using <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
-                    </div>
-                </div>
-            -->
             </div>
         
             <!-- END COPY PASTE HERE FOR SIDE BAR CODE -->
@@ -86,5 +60,14 @@
         <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script src="/js/note.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#folder_name').keypress(function(e) {
+                if (e.which == 13) {
+                    document.folderForm.submit();
+                }
+            });
+        });
+        </script>
     </body>
 </html>

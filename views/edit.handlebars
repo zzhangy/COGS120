@@ -53,13 +53,16 @@
                             <ul id="notelist">
                                 {{#each notes}}
                                     <li>
-                                        <div contenteditable="true" class="note" data-tag="{{tag}}">{{note}}</div>
+                                        <div contenteditable="true" class="note edit-note" data-tag="{{tag}}">{{note}}</div>
                                     </li>
                                 {{/each}}
                             </ul>
                             <span id="newnote">+</span>
                         </div>
-                        <form id="submitForm" action="/readNote" method="POST"></form>
+                        <form id="submitForm" action="/edit/{{f_id}}/{{n_id}}" method="POST"></form>
+                        <form id="deleteForm" action="/delete/{{f_id}}/{{n_id}}" method="POST">
+                            <input type="submit" id="deleteBtn" class="btn btn-default submitButton" value="Delete note"></input>
+                        </form>
                     </div>  
                     <div id="toolbar">
                         <a href="#" id="addNewButton"><span class="glyphicon glyphicon-pencil"></span></a>

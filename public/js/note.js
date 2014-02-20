@@ -7,6 +7,7 @@
 */
 function current_date() {
             var d = new Date();
+            //return d.toDateString();
             return (d.getMonth()+1) + "/" +
                         d.getDate() + "/" +
                         d.getFullYear();
@@ -40,7 +41,7 @@ function initializePage() {
 }
 
 function addNote(e) {
-	var newnote = $('<li><div contenteditable="true" class="note" data-tag="0"></di></li>');
+	var newnote = $('<li><div contenteditable="true" class="note edit-note" data-tag="0"></di></li>');
 	//var newnote = $('<li><textarea onkeyup="new resize_input(this);" virtual rows="1" class="note"></textarea></li>');
 	//var newnote = $('<li><input type="text" class="note"></input></li>');
 	var notelist = $('#notelist');

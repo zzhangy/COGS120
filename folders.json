@@ -1,5 +1,6 @@
 {"folders" : [
 	{"folder_name": "COGS",
+	"last_updated" : "02/18/2014",
 	"folder" : [
 		{
 			"date": "02/18/2014",
@@ -12,7 +13,7 @@
 			]
 		},
 		{
-			"date": "02/18/2014",
+			"date": "02/17/2014",
 			"title": "COGS 120 Week 8 0/1",
 			"notes": [
 				{ "tag": "0", "note": "Hallelujah"},
@@ -23,6 +24,7 @@
 		]
 	},
 	{"folder_name": "CSE 170",
+	"last_updated" : "02/18/2014",
 	"folder" : [
 		{
 			"date": "02/18/2014",
@@ -35,7 +37,7 @@
 			]
 		},
 		{
-			"date": "02.18.2014",
+			"date": "02/18/2014",
 			"title": "CSE HAHA 1/1",
 			"notes": [
 				{ "tag": "0", "note": "MongoDB"},

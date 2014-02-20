@@ -169,17 +169,15 @@ footer {
   margin-left: -15px;
 }
 
-div[contenteditable="true"] {
+/*div[contenteditable="true"] {*/
+div.edit-note {
   border: 1px solid #ddd;
   border-top: none;
   width: 100%;
   display: inline-block;
   white-space: pre-wrap;
   padding: 3px;
-}
-
-div[contenteditable="true"]:focus {
-  /*outline: none;*/
+  margin-top: -2px;
 }
 
 #notelist li:first-child div {
@@ -211,4 +209,12 @@ div[data-tag="1"] {
 li div {
   display: inline-block;
   padding: 1px 5px;
+}
+
+.note {
+  vertical-align: text-top;
+}
+
+#column2 li {
+  text-align: left;
 }

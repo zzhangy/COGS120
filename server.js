@@ -49,13 +49,36 @@ if ('development' == app.get('env')) {
 
 /* ADD ROUTE TO APP */
 app.get('/checkLogin', index.checkLogin);
-app.get('/home', index.viewFolders);
+
 app.post('/readNote', index.generateRead); //submitting
+app.get('/delete/:folder/:note', index.deleteNote); //submitting // to delete later
+app.get('/delete/:folder/:note/:note_num', index.deleteNoteLine); //submitting // to delete later
+
+
+// notes // rename later to be same names
+app.post('/add/:folder', index.addNote);				// post from add
+app.post('/edit/:folder/:note', index.submitEditNote);	// post from edit
+														// post(a) del
+
+app.get('/new/:folder', index.newNote); 		// add note to folder
+app.get('/read/:folder/:note', index.readNote); // read
+app.get('/edit/:folder/:note', index.editNote); // edit 
+												// delete
+
+app.get('/new', index.newFolder); // warning: no notes! error proof it
+app.get('/edit/:folder', index.editFolder); // warning: no notes! error proof it
+app.post('/add', index.addFolder);
+app.post('/edit/:folder', index.submitEditFolder);
+app.post('/delete/:folder', index.deleteFolder);
+
+
+// folders
+app.get('/folder/:folder', index.viewFolder);	// read
+
+app.get('/home', index.viewFolders);			// read all folders
+
+
 app.get('/readNote', index.getRead); //read sample note
-app.get('/read/:folder/:note', index.readNote);
-app.get('/folder/:folder', index.viewFolder);
-app.get('/edit/:folder/:note', index.editNote);
-//app.get('/failure', index.loginFailure);
 // Example route
 // app.get('/users', user.list);
 
