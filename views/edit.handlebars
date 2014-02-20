@@ -53,7 +53,7 @@
                             <ul id="notelist">
                                 {{#each notes}}
                                     <li>
-                                        <div contenteditable="true" class="note edit-note" data-tag="{{tag}}">{{note}}</div>
+                                        <a href="/delete/{{../f_id}}/{{../n_id}}/{{@index}}" class="btn btn-default"></a><div contenteditable="true" class="note edit-note" data-tag="{{tag}}">{{note}}</div>
                                     </li>
                                 {{/each}}
                             </ul>

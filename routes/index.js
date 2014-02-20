@@ -5,9 +5,13 @@ var folderJson = require('../folders.json');
 var deletedFolder = {};
 var deletedNote = {};
 var deletedLine = {};
+
+// all of these used for last deleted item! ex. note line uses all 3 ids
 var deletedFolderId = 0,
 	deletedNoteId = 0,
-	deletedLineId = 0; // important: where is the message going to appear at?
+	deletedLineId = 0;
+
+var justDeleted = 0;
 
 exports.checkLogin = function(req, res) {
 	//console.log(users);
@@ -71,6 +75,8 @@ exports.deleteFolder = function(req, res){
 	var deleted_folder_arr = folderJson['folders'].splice(folder_id, 1);
 	if (deleted_folder_arr.length > 0) {
 		deletedFolder = deleted_folder_arr[0];
+		deletedFolderId = folder_id;
+		justDeleted = 1;
 	}
 
 	res.redirect('/home');
@@ -240,12 +246,16 @@ exports.deleteNote = function(req, res){
 	// save deleted note!
 	if (deleted_note_arr.length > 0) {
 		deletedNote = deleted_note_arr[0];
+		deletedFolderId = folder_id;
+		deletedNoteId = note_id;
+		justDeleted = 1;
 	}
 	// check error if none exist, or show empty page
 	getFolderDate(folder_id);
 
 // disply undo message 
-	res.redirect('/folder/' + folder_id);
+	//res.redirect('/folder/' + folder_id);
+	res.redirect('/edit/' + folder_id);
 };
 
 exports.deleteNoteLine = function(req, res){
@@ -258,11 +268,19 @@ exports.deleteNoteLine = function(req, res){
 	var note_num = parseInt(note_num_string, 10);
 
 	var folders = folderJson['folders'];
-	var note = folders[folder_id].folder[note_id].notes.splice(note_num, 1); // only if exist
+	var note_line_arr = folders[folder_id].folder[note_id].notes.splice(note_num, 1); // only if exist
+	if (note_line_arr.length > 0) {
+		var deletedLine = note_line_arr[0];
+		deletedLineId = note_num;
+		deletedNoteId = note_id;
+		deletedFolderId = folder_id;
+		justDeleted = 1;
+	}
 	// check error if none exist, or show empty page
 
 // disply undo message 
-	res.redirect('/read/' + folder_id + '/' + note_id);
+	//res.redirect('/read/' + folder_id + '/' + note_id);
+	res.redirect('/edit/' + folder_id + '/' + note_id);
 };
 
 function parseIfInt(num_string) {

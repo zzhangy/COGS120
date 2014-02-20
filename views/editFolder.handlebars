@@ -67,7 +67,7 @@
                         <ul>
                         {{#each folder}}
                             <!--<li class="note">{{note}}</li>-->
-                            <li><a class="note_file" href="/delete/{{../id}}/{{@index}}">{{this.title}}</a></li>
+                            <li><a class="note_file" href="/edit/{{../id}}/{{@index}}">{{this.title}}</a> <a class="note_file btn btn-default btn-xs" href="/delete/{{../id}}/{{@index}}">x</a></li>
                         {{/each}}
                         </ul>
                         <input type="submit" id="submitBtn" class="btn btn-default submitButton" value="Update folder"></input>
