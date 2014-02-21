@@ -8,6 +8,12 @@ function current_date() {
                         d.getFullYear();
 }
 
+function selectColor(e) {
+	var color = $(e).attr('id');
+	console.log(color);
+	$(e).css('border-width',"3px");
+}
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
@@ -15,7 +21,10 @@ $(document).ready(function() {
 	                $("#myModal").modal('show');
 	            });
 	// add a new note!
-})
+	$(".glyphicon-tag").click(function(){
+	                $("#myModal1").modal('show');
+	            });
+});
 
 /*
  * Function that is called when the document is ready.

@@ -318,7 +318,7 @@ exports.viewFolders = function(req, res){
 	// folder json!
 
 	var folders = folderJson;
-console.log(folders);
+//console.log(folders);
 	res.render('home', { 'home': folders, helpers: {setIndex: function(value){
                 this.index = Number(value);}}});
 };

@@ -30,7 +30,7 @@
                     <ul class="nav nav-sidebar">
                         <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
                         <li class="active"><a href="#"><i class="fa fa-plus fa-3x"></i><br/>NEW</a></li>
-                        <li><a href="/home.html"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
+                        <li><a href="/home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
                         <li><a href="/settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
                         <li><a href="/help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
                         <li><a href="/index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
@@ -38,10 +38,16 @@
                 </div>
                 <!-- this is the other column in the code -->
                 <div class="col-xs-12 col-sm-9 main" id="column2">
-                    <p class="pull-left visible-xs">
+                   <!-- <p class="pull-left visible-xs">
                         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
-                    </p>
-
+                    </p>-->
+                    <div id="toolbar">
+                        <a href="#" class="pull-left visible-xs" data-toggle="offcanvas"><i class="fa fa-list-ul fa-2x" style="color: white; padding-left:5px;"></i></a>
+                        <a href="#" id="addNewButton"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
+                        <a href="#"><i class="fa fa-trash-o fa-2x" style="color:white;"></i></a>
+                        <a href="/read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
+                    </div>
                     <div id="notepage">
                         <div id="date-div">
                             <span id="date-edit">{{date}}<span>
@@ -65,12 +71,7 @@
                             <input type="submit" id="deleteBtn" class="btn btn-default submitButton" value="Delete note"></input>
                         </form>
                     </div>  
-                    <div id="toolbar">
-                        <a href="#" id="addNewButton"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
-                        <a href="/read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
-                    </div>
+                    
                 </div>
             
         <!-- testing toolbar right now
