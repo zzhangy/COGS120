@@ -50,9 +50,12 @@
                 </div>
                 <!-- this is the other column in the code -->
                 <div class="col-xs-12 col-sm-9 main" id="column2">
-                    <p class="pull-left visible-xs">
-                        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
-                    </p>
+                    <div id="toolbar">
+                        <a href="#" id="addNewButton"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
+                        <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
+                        <a href="/read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
+                    </div>
 
                     <div id="notepage">
                         <div id="date-div">
@@ -71,12 +74,7 @@
                         </div>
                         <form id="submitForm" action="/add/{{id}}" method="POST"></form>
                     </div>  
-                    <div id="toolbar">
-                        <a href="#" id="addNewButton"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
-                        <a href="/read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
-                    </div>
+                    
                 </div>
             
         <!-- testing toolbar right now
