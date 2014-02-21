@@ -27,12 +27,12 @@ function populateSearch(results_array) {
 			var line = results_array[i];
 			//var li = '<li>' + line.note + '</li>';
 			if ((i % 2) == 0) {
-				var li = '<li class="result-odd">' + '<a href="/edit/' + line.folder 
-							+ '/' + line.note + '">'+ line.note + '</a></li>';
+				var li = '<li class="result-odd">' + '<a href="/edit/' + line.id.folder 
+							+ '/' + line.id.note + '">'+ line.note + '</a></li>';
 			}
 			else {
-				var li = '<li class="result-even">' + '<a href="/edit/' + line.folder 
-							+ '/' + line.note + '">'+ line.note + '</a></li>';
+				var li = '<li class="result-even">' + '<a href="/edit/' + line.id.folder 
+							+ '/' + line.id.note + '">'+ line.note + '</a></li>';
 			}
 			ul += li;
 		}
