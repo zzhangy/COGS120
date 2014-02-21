@@ -173,7 +173,7 @@ footer {
 div.edit-note {
   border: 1px solid #ddd;
   border-top: none;
-  max-width: 100%;
+  width: 85%;
   display: inline-block;
   white-space: pre-wrap;
   padding: 3px 4px;

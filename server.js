@@ -47,6 +47,11 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+/*
+handlebars.registerHelper('setIndex', function(value){
+    this.index = parseInt(value); //I needed human readable index, not zero based
+});*/
+
 /* ADD ROUTE TO APP */
 app.get('/checkLogin', index.checkLogin);
 
@@ -71,6 +76,8 @@ app.post('/add', index.addFolder);
 app.post('/edit/:folder', index.submitEditFolder);
 app.post('/delete/:folder', index.deleteFolder);
 
+app.post('/move/:folder/:note/:tofolder', index.moveNote);
+
 
 // folders
 app.get('/folder/:folder', index.viewFolder);	// read
@@ -81,6 +88,25 @@ app.get('/home', index.viewFolders);			// read all folders
 app.get('/readNote', index.getRead); //read sample note
 // Example route
 // app.get('/users', user.list);
+/*
+app.use(function(req, res, next){
+  res.status(404);
+
+  // respond with html page
+  if (req.formt('html')) {
+    res.render('404', { 'url': req.url });
+    return;
+  }
+
+  // respond with json
+  if (req.format('json')) {
+    res.send({ 'error': 'Not found' });
+    return;
+  }
+
+  // default to plain-text. send()
+  res.type('txt').send('Not found');
+});*/
 
 // Start the server
 http.createServer(app).listen(app.get('port'), function(){

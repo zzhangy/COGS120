@@ -44,9 +44,13 @@
                 </div>
             <!-- this is the other column in the code -->
             <div class="col-xs-6 col-sm-9 col-md-10 main">
-                {{#each folders}}
+                {{#each home.folders}}
                 <span class="folder">
                     <h2><a href="/folder/{{@index}}"><i class="fa fa-plus fa-4x"></i><br/>{{this.folder_name}} | {{this.last_updated}}</a></li></a></h2>
+                    {{setIndex @index}}
+                    {{#each folder}}
+                        <span>{{../index}} waaa {{@index}}</span>
+                    {{/each}}
                 </span>
                 {{/each}}
             <!-- END COPY PASTE HERE FOR SIDE BAR CODE -->

@@ -1,10 +1,5 @@
 'use strict';
 
-/*window.onload = function() {
-  var input = document.getElementById("#title").focus();
-}
-
-*/
 function current_date() {
             var d = new Date();
             //return d.toDateString();
@@ -38,6 +33,11 @@ function initializePage() {
 	// consider for notes too! but need to attach handler when creating
 	$('#addNewButton').click(addNote);
 	$('#date').text(current_date());
+}
+
+function hello(thisdiv) {
+	thisdiv.style.backgroundColor = 'yellow';
+	thisdiv.dataset.tag = "0";
 }
 
 function addNote(e) {

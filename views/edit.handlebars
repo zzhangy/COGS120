@@ -44,7 +44,7 @@
 
                     <div id="notepage">
                         <div id="date-div">
-                            <span id="date">{{date}}<span>
+                            <span id="date-edit">{{date}}<span>
                         </div>
                         <br/>
                         <input id="title" placeholder="Title" type="text" size="35" class="form-control" value="{{title}}"/>
@@ -53,7 +53,8 @@
                             <ul id="notelist">
                                 {{#each notes}}
                                     <li>
-                                        <a href="/delete/{{../f_id}}/{{../n_id}}/{{@index}}" class="btn btn-default"></a><div contenteditable="true" class="note edit-note" data-tag="{{tag}}">{{note}}</div>
+                                        <div contenteditable="true" class="note edit-note" data-tag="{{tag}}" onclick="hello(this);">{{note}}</div>
+                                        <a href="/delete/{{../f_id}}/{{../n_id}}/{{@index}}" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></a>
                                     </li>
                                 {{/each}}
                             </ul>

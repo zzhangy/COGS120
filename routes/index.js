@@ -151,6 +151,21 @@ exports.newNote = function(req, res){
 	res.render('new', {'id': folder_id});
 };
 
+exports.moveNote = function(req, res) {
+	var note_string   = req.params.note;
+	var folder_string = req.params.folder;
+	var folder_id = parseInt(folder_string, 10); //check if Nan
+	var note_id = parseInt(note_string, 10);
+
+	var folders = folderJson['folders'];
+	var removed_arr = folders[folder_id].folder.splice(note_id, 1);
+	if (removed_arr.length > 0) {
+		var note_to_move = removed_arr[0];
+		//note_to_move
+		//var folders = folderJson['folders'];
+	}
+};
+
 exports.addNote = function(req, res){
 	var folder_string = req.params.folder;
 	var folder_id = parseInt(folder_string, 10); //check if Nan
@@ -179,6 +194,7 @@ exports.submitEditNote = function(req, res){
 	var folders = folderJson['folders'];
 	//var newnote_id = folders[folder_id].folder.length;
 	folders[folder_id].folder[note_id] = json;
+	json.date = current_date();
 	updateFolderDate(json.date, folder_id);
 
 	//console.log(json);
@@ -303,5 +319,6 @@ exports.viewFolders = function(req, res){
 
 	var folders = folderJson;
 console.log(folders);
-	res.render('home', folders);
+	res.render('home', { 'home': folders, helpers: {setIndex: function(value){
+                this.index = Number(value);}}});
 };
