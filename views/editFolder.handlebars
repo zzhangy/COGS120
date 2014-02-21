@@ -28,9 +28,9 @@
              <div class="row row-offcanvas row-offcanvas-left">
                 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                     <ul class="nav nav-sidebar">
-                        <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
-                        <li class="active"><a href="#"><i class="fa fa-plus fa-3x"></i><br/>NEW</a></li>
-                        <li><a href="/home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
+                       <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
+                        <li class="active"><a href="/home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
+                        <li><a href="#"><i class="fa fa-search fa-3x"></i><br/>SEARCH</a></li>
                         <li><a href="/settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
                         <li><a href="/help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
                         <li><a href="/index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
@@ -67,13 +67,17 @@
                           <input id="folder_name" name="folder_name" placeholder="Folder Name" type="text" size="35" class="form-control" value="{{folder_name}}"/>
                         </div>
                         <span>updated {{last_updated}}</span>
+                        <div id="notes">
+                        <h4>Notes:</h4>
                         <ul>
                         {{#each folder}}
                             <!--<li class="note">{{note}}</li>-->
                             <li><a class="note_file" href="/edit/{{../id}}/{{@index}}">{{this.title}}</a> <a class="note_file btn btn-default btn-xs" href="/delete/{{../id}}/{{@index}}">x</a></li>
+
                         {{/each}}
                         </ul>
-                        <a href="/new/{{id}}" class="btn btn-default">ADD</a>
+                    </div>
+                        <a href="/new/{{id}}" class="btn btn-default">Add Note</a>
                         <input type="submit" id="submitBtn" class="btn btn-default submitButton" value="Update folder"></input>
                     </form>
 

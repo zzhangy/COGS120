@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="css/main.css">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/css/note.css">
     <!-- Bootstrap Form Helpers -->
     <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
     <!-- Add Responsiveness -->
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <!-- Social Media Buttons -->
     <link href="css/social-buttons-3.css" rel="stylesheet">
     <!-- Extra Icons -->
@@ -21,29 +21,32 @@
 </head>
 
     <body>
-        <div class="container-fluid">
+        <div class="container">
             <!-- COPY AND PASTE THIS FOR THE SIDE BAR CODE -->
-            <div class="row">
-                <div class="col-sm-2 col-md-1 sidebar">
+             <div class="row row-offcanvas row-offcanvas-left">
+                <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                     <ul class="nav nav-sidebar">
                         <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
-                        <li><a href="new.html"><i class="fa fa-plus fa-3x"></i><br/>NEW</a></li>
-                        <li><a href="/home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
-                        <li><a href="settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
-                        <li class="active"><a href="help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
-                        <li><a href="index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
+                        <li ><a href="/home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
+                        <li><a href="#"><i class="fa fa-search fa-3x"></i><br/>SEARCH</a></li>
+                        <li><a href="/settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
+                        <li class="active"><a href="/help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
+                        <li><a href="/index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
                     </ul>
                 </div>
             <!-- this is the other column in the code -->
-            <div class="col-sm-9 col-md-10 main">
+            <div class="col-xs-12 col-sm-9 main" id="column2">
+                <div id="toolbar">
+                        <a href="#" class="pull-left visible-xs" data-toggle="offcanvas"><i class="fa fa-list-ul fa-2x" style="color: white; padding-left:5px;"></i></a>
+                    </div>
                 <h2>HELP</h2>
-                <h3>To create a new note:</h3></br>
-                <p>1. Click on an existing folder (there is a default created for you already).</br>
-                   2. Click "Create new note"</br></br>
+                <h3>To create a new note:</h3><br>
+                <p>1. Click on an existing folder (there is a default created for you already).<br/>
+                   2. Click "Create new note"<br/><br>
                 </p>
-                <h3>To highlight a bullet:</h3></br>
+                <h3>To highlight a bullet:</h3><br>
                 <p>1. Click on the middle icon on the bottom toolbar to select a color.</br>
-                   2. Select the bullet you want highlighted. </br>
+                   2. Select the bullet you want highlighted. <br>
                    3. Click on the left icon on the bottom toolbar to highlight.</br>
                 </p>
                 <h3>To change your password:</h3></br>
@@ -67,6 +70,6 @@
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-        <script src="js/main.js"></script>
+        <script src="/js/note.js"></script>
     </body>
 </html>

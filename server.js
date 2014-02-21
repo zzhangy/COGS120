@@ -83,6 +83,8 @@ app.post('/move/:folder/:note/:tofolder', index.moveNote);
 app.get('/folder/:folder', index.viewFolder);	// read
 
 app.get('/home', index.viewFolders);			// read all folders
+app.get('/search/:color', index.searchLines);
+app.get('/search', index.showSearch);
 
 
 app.get('/readNote', index.getRead); //read sample note

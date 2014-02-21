@@ -29,8 +29,8 @@
                 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                     <ul class="nav nav-sidebar">
                         <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
-                        <li class="active"><a href="#"><i class="fa fa-plus fa-3x"></i><br/>NEW</a></li>
-                        <li><a href="/home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
+                        <li class="active"><a href="/home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
+                        <li><a href="#"><i class="fa fa-search fa-3x"></i><br/>SEARCH</a></li>
                         <li><a href="/settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
                         <li><a href="/help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
                         <li><a href="/index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
@@ -44,8 +44,10 @@
                     <div id="toolbar">
                         <a href="#" class="pull-left visible-xs" data-toggle="offcanvas"><i class="fa fa-list-ul fa-2x" style="color: white; padding-left:5px;"></i></a>
                         <a href="#" id="addNewButton"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
-                        <a href="#"><i class="fa fa-trash-o fa-2x" style="color:white;"></i></a>
+                        <a href="#" id="colorsButton"><span class="glyphicon glyphicon-tag"></span></a>
+                        <!-- Modal HTML -->
+                        <a href="#" id="highlightButton"><span class="glyphicon glyphicon-tag"></span></a>
+                        <a href="#" id="deleteTool"><i class="fa fa-trash-o fa-2x" style="color:white;"></i></a>
                         <a href="/read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
                     </div>
                     <div id="notepage">
@@ -68,7 +70,7 @@
                         </div>
                         <form id="submitForm" action="/edit/{{f_id}}/{{n_id}}" method="POST"></form>
                         <form id="deleteForm" action="/delete/{{f_id}}/{{n_id}}" method="POST">
-                            <input type="submit" id="deleteBtn" class="btn btn-default submitButton" value="Delete note"></input>
+                            <input type="hidden" id="deleteBtn" class="btn btn-default submitButton" value="Delete note" visibility="hidden"></input>
                         </form>
                     </div>  
                     
@@ -85,6 +87,28 @@
         
             <!-- END COPY PASTE HERE FOR SIDE BAR CODE -->
         </div>
+        <div id="myModal1" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Select a color for highlighting bullets.</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    <div class="col-sm-5">
+                                        <a href="#" class="foo" id="red" style="background-color:red" onClick="selectColor(this)"></a>
+                                        <a href="#" class="foo" id="green" style="background-color:green" onClick="selectColor(this)"></a>
+                                        <a href="#" class="foo" id="blue" style="background-color:blue" onClick="selectColor(this)"></a>
+                                        <a href="#" class="foo" id="yellow" style="background-color:yellow" onClick="selectColor(this)"></a>
+                                        <a href="#" class="foo" id="none" style="background-color:transparent" onClick="selectColor(this)"></a>
+                                    </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Save and Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
         <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
         <script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>

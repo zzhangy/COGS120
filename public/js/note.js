@@ -1,5 +1,7 @@
 'use strict';
-var savedColor;
+var savedColor = "none";
+var savedColorTag = "0";
+var highlightOn = false;
 
 function current_date() {
             var d = new Date();
@@ -9,9 +11,18 @@ function current_date() {
                         d.getFullYear();
 }
 
+function colorToTag () {
+	if (savedColor == "yellow")     return "1";
+	else if (savedColor == "red")   return "2";
+	else if (savedColor == "blue")  return "3";
+	else if (savedColor == "green") return "4";
+	else							return "0";
+}
+
 function selectColor(e) {
 	var color = $(e).attr('id');
 	savedColor = color;
+	savedColorTag = colorToTag();
 	console.log(color);
 	$(e).css('border-width',"3px");
 }
@@ -24,7 +35,7 @@ $(document).ready(function() {
 	                $("#myModal").modal('show');
 	            });
 	// add a new note!
-	$(".glyphicon-tag").click(function(){
+	$("#colorsButton").click(function(){
 	                $("#myModal1").modal('show');
 	            });
 });
@@ -42,18 +53,37 @@ function initializePage() {
 				addNote(e);
 		}
 	});
+	/*$('.note').live('keypress', function(e) {
+		if (e.which == 13) {
+			var notes = $('.note');
+			if (notes.length == 0)
+				addNote(e);
+		}
+	});*/
 	// consider for notes too! but need to attach handler when creating
 	$('#addNewButton').click(addNote);
+	$('#deleteTool').click(function() {
+		$('#deleteForm').submit();
+	});
 	$('#date').text(current_date());
+	$('#highlightButton').click(function() {
+		highlightOn = !highlightOn;
+		$(this).children('span').css('color', '#fff');
+		if (highlightOn) {
+			if (savedColor != "none")
+				$(this).children('span').css('color', savedColor);
+		}
+	});
 }
 
 function hello(thisdiv) {
-	thisdiv.style.backgroundColor = 'yellow';
-	thisdiv.dataset.tag = "0";
+	//thisdiv.style.backgroundColor = 'yellow';
+	if (highlightOn)
+		thisdiv.dataset.tag = savedColorTag;
 }
 
 function addNote(e) {
-	var newnote = $('<li><div contenteditable="true" class="note edit-note" data-tag="0"></di></li>');
+	var newnote = $('<li><div contenteditable="true" class="note edit-note" data-tag="0" onclick="hello(this);"></di></li>');
 	//var newnote = $('<li><textarea onkeyup="new resize_input(this);" virtual rows="1" class="note"></textarea></li>');
 	//var newnote = $('<li><input type="text" class="note"></input></li>');
 	var notelist = $('#notelist');

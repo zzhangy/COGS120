@@ -27,14 +27,15 @@
 
             <div class="inner cover">
                 <h1 class="cover-heading"></h1>
-                <img src="img/notepulllogo.png" />
+                <img src="img/notepulllogo.png" style="width:260px;height:130px;"/>
                 <form class="form-signin" role="form">
-                    <h2 class="form-signin-heading" style="color:white;">Please sign in</h2>
+                    <h2 class="form-signin-heading" style="color:white; font-size:x-large;" id="loginPrompt">Please sign in</h2>
                     <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" id="emailField">
                     <input type="password" class="form-control" placeholder="Password" required="" id="passwordField">
                     <a href="/home" class="btn btn-lg btn-primary btn-block" id="loginButton" type="submit">Start taking notes!</a>
-                    <p style="color:white; font-size: large;" ><br/>OR<br/></p>
-                    <p style="color:white; font-size:large;"><br/>Don't have an account? <a href="signup.html">Sign Up</a>!</p>
+
+                    <p style="color:white; font-size:large;"><br/>Don't have an account? </p>
+                    <p><a href="signup.html" class="btn btn-lg btn-primary btn-block">Sign Up</a></p>
                 </form>
             </div>
 
@@ -53,8 +54,7 @@
         <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
         <script src="js/notepull.js"></script>
+        
     </body>
 </html>
