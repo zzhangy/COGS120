@@ -16,7 +16,6 @@ function selectColor(e) {
 	$(e).css('border-width',"3px");
 }
 
-function ()
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
