@@ -1,4 +1,5 @@
 'use strict';
+var savedColor;
 
 function current_date() {
             var d = new Date();
@@ -10,9 +11,12 @@ function current_date() {
 
 function selectColor(e) {
 	var color = $(e).attr('id');
+	savedColor = color;
 	console.log(color);
 	$(e).css('border-width',"3px");
 }
+
+function ()
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
