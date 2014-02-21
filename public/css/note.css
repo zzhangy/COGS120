@@ -151,6 +151,7 @@ footer {
 #notepage {
   height: 100%;
   margin-bottom: 50px;
+	margin-top:80px;
   text-align: left;
 }
 
@@ -160,13 +161,21 @@ footer {
 }
 
 #toolbar {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 40px;
   background-color: #474747;
   padding-top: 13px;
   margin-left: -15px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+@media all and (max-height: 500px) {
+	#toolbar {
+		position: fixed;
+		top: 0px;
+	}
 }
 
 /*div[contenteditable="true"] {*/
@@ -174,6 +183,7 @@ div.edit-note {
   border: 1px solid #ddd;
   border-top: none;
   max-width: 100%;
+	height:30px;
   display: inline-block;
   white-space: pre-wrap;
   padding: 3px 4px;
@@ -189,6 +199,8 @@ div.edit-note {
   font-size: medium;
   font-weight: bold;
   padding-left: 24px;
+	position: relative;
+	overflow: auto;
 }
 /*
     #noteholder {
