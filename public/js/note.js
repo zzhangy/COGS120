@@ -38,6 +38,10 @@ $(document).ready(function() {
 	$("#colorsButton").click(function(){
 	                $("#myModal1").modal('show');
 	            });
+    /*$(".popover-top").popover({
+        placement : 'top'
+    });*/
+	$(".popover-top").popover('show');
 });
 
 /*
@@ -74,6 +78,7 @@ function initializePage() {
 				$(this).children('span').css('color', savedColor);
 		}
 	});
+	$('.collapse').collapse();
 }
 
 function hello(thisdiv) {

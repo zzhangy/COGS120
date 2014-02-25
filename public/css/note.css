@@ -36,6 +36,12 @@ textarea {
 	float: right;
 	color: #39b54a;
 }
+/* For help popover */
+.popover-example .popover {
+  position: relative;
+  display: block;
+  margin: 15px;
+}
 
 /* for desktop */
 .toolbar-links:hover { color: #fff; }

@@ -30,7 +30,8 @@
                         <li ><a href="/home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
                         <li><a href="#"><i class="fa fa-search fa-3x"></i><br/>SEARCH</a></li>
                         <li><a href="/settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
-                        <li class="active"><a href="/help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
+                        <li class="active"><a href="/help.html" class="popover-top" data-toggle="popover" title="First time using notePull?" data-content="Click me to get started!"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a>
+                        </li>
                         <li><a href="/index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
                     </ul>
                 </div>
@@ -38,21 +39,61 @@
             <div class="col-xs-12 col-sm-9 main" id="column2">
                 <div id="toolbar">
                         <a href="#" class="pull-left visible-xs" data-toggle="offcanvas"><i class="fa fa-list-ul fa-2x" style="color: white; padding-left:5px;"></i></a>
-                    </div>
+                </div>
                 <h2>HELP</h2>
-                <h3>To create a new note:</h3><br>
-                <p>1. Click on an existing folder (there is a default created for you already).<br/>
-                   2. Click "Create new note"<br/><br>
+                <h3>Get started with notePull</h3><br>
+                <p>
                 </p>
-                <h3>To highlight a bullet:</h3><br>
-                <p>1. Click on the middle icon on the bottom toolbar to select a color.</br>
-                   2. Select the bullet you want highlighted. <br>
-                   3. Click on the left icon on the bottom toolbar to highlight.</br>
-                </p>
-                <h3>To change your password:</h3></br>
-                <p>1. Click on "Settings" on the left menu.</br>
-                   2. Type your new password twice and save.</br>
-                </p>
+
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          To create a new note
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        1. Click on an existing folder (there is a default created for you already).<br/>
+                        2. Click "Create new note"
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                          To highlight a bullet
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        1. Click on the middle icon on the bottom toolbar to select a color.</br>
+                        2. Select the bullet you want highlighted. <br>
+                        3. Click on the left icon on the bottom toolbar to highlight.</br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                          To change your password
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        1. Click on "Settings" on the left menu.</br>
+                        2. Type your new password twice and save.</br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             
             </div>
             <div class="mastfoot">
                     <div class="inner">
