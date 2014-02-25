@@ -1,9 +1,9 @@
 {"folders" : [
 	{"folder_name": "COGS",
-	"last_updated" : "02/18/2014",
+	"last_updated" : "Tue Feb 18 2014",
 	"folder" : [
 		{
-			"date": "02/18/2014",
+			"date": "Tue Feb 18 2014",
 			"title": "COGS 120 Week 7 NOTE 0/0",
 			"notes": [
 				{ "tag": "0", "note": "MongoDB"},
@@ -13,7 +13,7 @@
 			]
 		}, 
 		{
-			"date": "02/17/2014",
+			"date": "Mon Feb 17 2014",
 			"title": "COGS 120 Week 8 0/1",
 			"notes": [
 				{ "tag": "0", "note": "Hallelujah"},
@@ -24,10 +24,10 @@
 		]
 	},
 	{"folder_name": "CSE 170",
-	"last_updated" : "02/28/2014",
+	"last_updated" : "Tue Feb 18 2014",
 	"folder" : [
 		{
-			"date": "02/18/2014",
+			"date": "Tue Feb 18 2014",
 			"title": "COGS 120 Week 7 1/0",
 			"notes": [
 				{ "tag": "0", "note": "MongoDB"},
@@ -37,7 +37,7 @@
 			]
 		},
 		{
-			"date": "02/18/2014",
+			"date": "Tue Feb 18 2014",
 			"title": "CSE HAHA 1/1",
 			"notes": [
 				{ "tag": "0", "note": "MongoDB"},
