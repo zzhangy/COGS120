@@ -1,4 +1,4 @@
-
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
 .login {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -72,10 +72,6 @@
 /* Links */
 a {
     color: #ed1c47;
-    text-decoration: none;
-}
-a:hover {
-    background-color: transparent;
     text-decoration: none;
 }
 
@@ -194,7 +190,11 @@ body {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
-
+.landing > .nav > li > a:focus,
+.landing > .nav > li > a:hover {
+  background-color: transparent;
+    border-bottom: 2px solid white;
+}
 @media (min-width: 992px) {
   .masthead,
   .mastfoot,
@@ -220,7 +220,11 @@ body {
 
 /* Sidebar navigation */
 html, body, .container-fluid {
-		height: 100%
+    height: 100%;
+    background-image: url("../img/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .row {
 		height: 100%;
@@ -238,9 +242,6 @@ html, body, .container-fluid {
 .listrow {
     display: inline-block;
     height: 83px;
-}
-.listrow:hover {
-    background-color: transparent;
 }
 .menurow {
     margin-top: 3%;
@@ -260,7 +261,10 @@ html, body, .container-fluid {
     float: right;
     color: white;
 }
-
+.foldertitle {
+    font-family: Roboto;
+    font-color: white;
+}
 ------------
 Visit twitterbootstrap.org for more tut 
 -------------
