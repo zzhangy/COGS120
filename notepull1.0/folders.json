@@ -1,0 +1,51 @@
+{"folders" : [
+	{"folder_name": "COGS",
+	"last_updated" : "02/18/2014",
+	"folder" : [
+		{
+			"date": "02/18/2014",
+			"title": "COGS 120 Week 7 NOTE 0/0",
+			"notes": [
+				{ "tag": "0", "note": "MongoDB"},
+				{ "tag": "1", "note": "QUIZ on Tuesday! Watch videos before class  alalalallalal baoisehfoenlfljoiej iojijoisdj fods well\nnewline yay"},
+				{ "tag": "0", "note": "why whitespace? can be used for grouping, pay attention to details"},
+				{ "tag": "1", "note": "QUIZ on Tuesday! Watch videos before class"}
+			]
+		}, 
+		{
+			"date": "02/17/2014",
+			"title": "COGS 120 Week 8 0/1",
+			"notes": [
+				{ "tag": "0", "note": "Hallelujah"},
+				{ "tag": "1", "note": "QUIZ on Tuesday! Watch videos before class  alalalallalal baoisehfoenlfljoiej iojijoisdj fods well\nnewline yay"},
+				{ "tag": "0", "note": "why whitespace? can be used for grouping, pay attention to details"}
+			]
+		}
+		]
+	},
+	{"folder_name": "CSE 170",
+	"last_updated" : "02/28/2014",
+	"folder" : [
+		{
+			"date": "02/18/2014",
+			"title": "COGS 120 Week 7 1/0",
+			"notes": [
+				{ "tag": "0", "note": "MongoDB"},
+				{ "tag": "1", "note": "QUIZ on Tuesday! Watch videos before class  alalalallalal baoisehfoenlfljoiej iojijoisdj fods well\nnewline yay"},
+				{ "tag": "0", "note": "why whitespace? can be used for grouping, pay attention to details"},
+				{ "tag": "1", "note": "QUIZ on Tuesday! Watch videos before class"}
+			]
+		},
+		{
+			"date": "02/18/2014",
+			"title": "CSE HAHA 1/1",
+			"notes": [
+				{ "tag": "0", "note": "MongoDB"},
+				{ "tag": "1", "note": "QUIZ on Tuesday! Watch videos before class  alalalallalal baoisehfoenlfljoiej iojijoisdj fods well\nnewline yay"},
+				{ "tag": "0", "note": "why whitespace? can be used for grouping, pay attention to details"},
+				{ "tag": "1", "note": "QUIZ on Tuesday! Watch videos before class"}
+			]
+		}
+		]
+	}
+]}

@@ -1,0 +1,239 @@
+#date-div {
+	float: right;
+}
+
+textarea {
+	padding: 0;
+	width: 100%;
+}
+/*
+#toolbar {
+	height:4em;
+	background-color: #474747;
+  padding-top: 13px;
+	margin: 0;
+}
+*/
+
+#column2 {
+	height: 100%;
+}
+
+#title {
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+#prev-icon {
+	float: left;
+}
+
+#next-icon {
+	float: right;
+}
+
+#done-icon {
+	float: right;
+	color: #39b54a;
+}
+
+/* for desktop */
+.toolbar-links:hover { color: #fff; }
+.toolbar-links:active { color: #fff; }
+.toolbar-links:visited { color: #fff; }
+
+span.glyphicon {
+	font-size: 20px;
+	color: #fff;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#notelist input {
+	width: 100%;
+}
+
+
+/***************************************/
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  height: 100%;
+  min-height: 100%;
+  overflow-y: auto;
+}/*
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}*/
+.row, .container, #sidebar {
+	height: 100%;
+	min-height: 100%;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transform: translate3d(0,0,0);
+       -moz-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+    -webkit-transition: all .25s ease-out;
+       -moz-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+
+    /* own */
+    background-color: #474747;
+  }
+}
+
+#sidebar {
+  background-color: #474747;
+}
+/*
+.tag-none {
+  background-color: transparent;
+}
+
+.tag-exam {
+  background-color: #eee;
+}
+*/
+/* sticky footer */
+
+#column2 {
+  height: 100%;
+  position: relative;
+  margin-top: 0;
+}
+
+#notepage {
+  height: 100%;
+  margin-bottom: 50px;
+	margin-top:80px;
+  text-align: left;
+}
+
+#notepageRead {
+  height: 100px;
+  text-align: left;
+}
+
+#toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #474747;
+  padding-top: 13px;
+  margin-left: -15px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+@media all and (max-height: 500px) {
+	#toolbar {
+		position: fixed;
+		top: 0px;
+	}
+}
+
+/*div[contenteditable="true"] {*/
+div.edit-note {
+  border: 1px solid #ddd;
+  border-top: none;
+  width: 85%;
+  display: inline-block;
+  white-space: pre-wrap;
+  padding: 3px 4px;
+  margin-top: -2px;
+  font-size: larger;
+}
+
+#notelist li:first-child div {
+  border-top: 1px solid #ddd;
+}
+
+#newnote {
+  font-size: medium;
+  font-weight: bold;
+  padding-left: 24px;
+	position: relative;
+	overflow: auto;
+}
+/*
+    #noteholder {
+      border: 1px solid #ddd;
+      width: 94%;
+      float: right;
+    }*/
+
+/* how to change colors as a user */
+
+li[data-tag="0"] {
+  background-color: transparent;
+}
+
+/* yellow, cyan, pink, gray, green */
+div[data-tag="1"] {
+  background-color: #ff0;
+}
+
+.note {
+  vertical-align: text-top;
+}
+
+#column2 li {
+  text-align: left;
+  width: 100%;
+}
+
+.foo {   
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.2);
+}

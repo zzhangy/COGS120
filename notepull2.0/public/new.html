@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>notePULL</title>
+    <meta name="COGS120" content="Sign Up">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/note.css">
+    <!-- Bootstrap Form Helpers -->
+    <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
+    <!-- Add Responsiveness
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
+    <!-- Social Media Buttons -->
+    <link href="css/social-buttons-3.css" rel="stylesheet">
+    <!-- Extra Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+    <body>
+        <script>
+        function resize_input(textbox) {
+            //var maxrows=4;
+            var txt=textbox.value;
+            var arraytxt=txt.split('\n');
+            var rows=arraytxt.length;
+            //if (rows < maxrows)
+            //    textbox.rows=maxrows;
+            //else
+                textbox.rows=rows; // not perfect, good for now
+        }
+        </script>
+        <div class="container">
+            <!-- COPY AND PASTE THIS FOR THE SIDE BAR CODE -->
+            <div class="row row-offcanvas row-offcanvas-left">
+                <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                    <ul class="nav nav-sidebar">
+                        <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
+                        <li class="active"><a href="#"><i class="fa fa-plus fa-3x"></i><br/>NEW</a></li>
+                        <li><a href="home"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
+                        <li><a href="settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
+                        <li><a href="help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
+                        <li><a href="index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
+                    </ul>
+                </div>
+                <!-- this is the other column in the code -->
+                <div class="col-xs-12 col-sm-9 main" id="column2">
+                    <p class="pull-left visible-xs">
+                        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+                    </p>
+
+                    <div id="notepage">
+                        <div id="date-div">
+                            <span id="date"><span>
+                        </div>
+                        <br/>
+                        <input id="title" placeholder="Title" type="text" size="35" class="form-control" autofocus/>
+                        <div>
+                            <!--<textarea rows="20" class="form-control"></textarea>-->
+                            <ul id="notelist">
+                            </ul>
+                            <!--<ul id="newnotelist">
+                                <li id="newnote"><div>&nbsp;</div></li>
+                            </ul>-->
+                            <span id="newnote">+</span>
+                        </div>
+                        <form id="submitForm" action="/readNote" method="POST"></form>
+                    </div>  
+                    <div id="toolbar">
+                        <a href="#" id="addNewButton"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <a href="#"><span class="glyphicon glyphicon-tag"></span></a>
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <a href="#" class="btn btn-lg btn-primary">Launch Demo Modal</a>
+                        
+                        <!-- Modal HTML -->
+                        <div id="myModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">Confirmation</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Do you want to save changes you made to document before closing?</p>
+                                        <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
+                        <a href="read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
+                    </div>
+                </div>
+            
+        <!-- testing toolbar right now
+            <div class="mastfoot">
+                    <div class="inner">
+                        <p style="color: black; text-align: center;">Created by Anindya Basu, Helena Qin, Yalin Zhang using <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+                    </div>
+                </div>
+            -->
+            </div>
+        
+            <!-- END COPY PASTE HERE FOR SIDE BAR CODE -->
+        </div>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <script src="js/note.js"></script>
+    </body>
+</html>
