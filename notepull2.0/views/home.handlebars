@@ -22,37 +22,17 @@
         <div class="container-fluid">
             <!-- COPY AND PASTE THIS FOR THE SIDE BAR CODE -->
             <div class="row">
-                <div class="col-xs-4 visible-xs" style="background-color: #474747;">
-                    <ul class="nav nav-sidebar">
-                        <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
-                        <li class="active"><a href="#"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
-                        <li><a href="settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
-                        <li><a href="help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
-                        <li><a href="index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2 col-md-1 sidebar visible-md visible-lg" style="background-color: #474747;">
-                    <ul class="nav nav-sidebar">
-                        <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
-                        <li><a href="#"><i class="fa fa-plus fa-3x"></i><br/>NEW</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-folder fa-3x"></i><br/>FOLDERS</a></li>
-                        <li><a href="settings.html"><i class="fa fa-cog fa-3x"></i><br/>SETTINGS</a></li>
-                        <li><a href="help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
-                        <li><a href="index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
-                    </ul>
-                </div>
             <!-- this is the other column in the code -->
             <div class="col-xs-6 col-sm-9 col-md-10 main">
-                 <!-- Button HTML (to Trigger Modal) -->
-                        <span class="folder">
-                            <h2><a href="/new"><i class="fa fa-plus fa-4x"></i><br/>NEW FOLDER</a></h2>
-                        </span>
-                        <!-- Modal HTML -->
+                <img src="/img/notepulllogofolders.png" width=310px />
+                        <a href="/new">
+                            <img src="/img/newfolder.png" width=310px/>
+                        </a>
                         
                         {{#each home.folders}}
                         
                 <span class="folder">
-                    <h2><a href="#" data-toggle="modal" data-target="#{{@index}}"><i class="fa fa-folder fa-4x"></i><br/>{{this.folder_name}}<br/><small><i class="fa fa-calendar"></i> {{this.last_updated}}</small></a></li></a></h2>
+                    <h2><a href="#{{@index}}"><span class="foldertitle"> {{this.folder_name}}<br/><small><i class="fa fa-calendar"></i> {{this.last_updated}}</small></span></a></li></a></h2>
                 </span>
                 <!-- Modal HTML -->
                         <!-- THIS MODAL IS TO OPEN AN ALREADY EXISTING FOLDER -->
