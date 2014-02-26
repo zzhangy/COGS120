@@ -51,10 +51,6 @@ function search(tag_string) {
 	return found_lines;
 }
 
-function () {
-	sort
-}
-
 function foldersAlphaAsc(a,b) {
 	return (a.folder_name).toLowerCase() - (b.folder_name).toLowerCase();
 }

@@ -103,14 +103,20 @@ function hello(thisdiv) {
 
 function addNote(e) {
 	var notelist = $('#notelist');
-	var line_num = notelist.children().length;
+	//var line_num = notelist.children().length;
 
 	var newnote = $('<li><div contenteditable="true" class="note edit-note" data-tag="0" onclick="hello(this);" onkeypress="noteKeyPress(event)"></div>'+
-		'<a href="/delete/'+curr_note_folder+'/'+curr_note+'/'+line_num+'" class="btn-xs deleteNote"><i class="fa fa-times"></i></a></li>');
+	//	'<a href="/delete/'+curr_note_folder+'/'+curr_note+'/'+line_num+'" class="btn-xs deleteNote"><i class="fa fa-times"></i></a></li>');
+		'<a href="delete_new_line(this)" class="btn-xs deleteNote"><i class="fa fa-times"></i></a></li>');
+
 	//var newnote = $('<li><div contenteditable="true" class="note edit-note" data-tag="0" onclick="hello(this);" onkeypress="noteKeyPress(event)"></div></li>');
 	notelist.append(newnote);
 
 	$('#notelist li:last-child div').focus();
+}
+
+function delete_new_line(this_a) {
+	$(this_a).parent().remove();
 }
 
 function submitNewNote(e) {
