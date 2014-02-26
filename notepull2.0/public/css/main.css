@@ -289,3 +289,8 @@ label.error {
 .iconav {
   font-size: 35px;
 }
+
+.landing > .nav > li > a:focus,
+.landing > .nav > li > a:hover {
+  background-color: transparent;
+}
