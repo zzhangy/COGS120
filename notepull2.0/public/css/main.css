@@ -2,11 +2,20 @@
 .login {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #2e2e2e;
-		background-attachment:fixed;
-		background-position:center;
-		background-repeat:no-repeat;
-		background-size:cover;
+    background-color: #0f0f0f;
+	background-image: url("../img/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.uh{
+    overflow: hidden;
+}
+.hidden { 
+    display: none; 
+}
+.unhidden {
+    display: block;
 }
 *:focus {
     outline: 0;
@@ -45,6 +54,13 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.form-signin input[type="name"] {
+  margin-bottom: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 #loginButton {
     background-color: transparent;
 }
@@ -54,7 +70,14 @@
  */
 
 /* Links */
-
+a {
+    color: #ed1c47;
+    text-decoration: none;
+}
+a:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
 
 /*
  * Base structure
@@ -67,7 +90,6 @@ body {
 	color:white;
 }
 body {
-  color: #fff;
   text-align: center;
 }
 
@@ -189,6 +211,11 @@ body {
 	height: 100%;
 	min-height: 100%;
 }
+.nav {
+    background-image: url("../img/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Sidebar navigation */
@@ -208,18 +235,12 @@ html, body, .container-fluid {
 		margin: 2%;
 		float: left;
 }
-.folder:hover {
-		color:#5b5b5b;
-}
-textarea {
-		margin-top: 200px;
-		padding: 20%;
-}
 .listrow {
     display: inline-block;
-    height: 88px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    height: 83px;
+}
+.listrow:hover {
+    background-color: transparent;
 }
 .menurow {
     margin-top: 3%;
