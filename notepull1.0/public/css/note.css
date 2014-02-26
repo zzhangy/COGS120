@@ -1,27 +1,19 @@
-#date-div {
-	float: right;
-}
-
 textarea {
 	padding: 0;
 	width: 100%;
 }
-/*
-#toolbar {
-	height:4em;
-	background-color: #474747;
-  padding-top: 13px;
-	margin: 0;
-}
-*/
 
 #column2 {
 	height: 100%;
 }
 
 #title {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   font-size: large;
+  border: none;
+  border-bottom: 1px solid #474747;
+  padding: 5px 10px;
+  width: 93%;
 }
 
 #prev-icon {
@@ -36,6 +28,12 @@ textarea {
 	float: right;
 	color: #39b54a;
 }
+/* For help popover */
+.popover-example .popover {
+  position: relative;
+  display: block;
+  margin: 15px;
+}
 
 /* for desktop */
 .toolbar-links:hover { color: #fff; }
@@ -48,11 +46,6 @@ span.glyphicon {
 	margin-left: 20px;
 	margin-right: 20px;
 }
-
-#notelist input {
-	width: 100%;
-}
-
 
 /***************************************/
 /*
@@ -150,8 +143,7 @@ footer {
 
 #notepage {
   height: 100%;
-  margin-bottom: 50px;
-	margin-top:80px;
+	margin-top:60px;
   text-align: left;
 }
 
@@ -168,55 +160,61 @@ footer {
   background-color: #474747;
   padding-top: 13px;
   margin-left: -15px;
-	padding-bottom: 40px;
+	/*padding-bottom: 40px;*/
 	text-align: center;
+  opacity: 0.5;
 }
+/*
 @media all and (max-height: 500px) {
 	#toolbar {
 		position: fixed;
 		top: 0px;
 	}
-}
+}*/
 
-/*div[contenteditable="true"] {*/
 div.edit-note {
-  border: 1px solid #ddd;
-  border-top: none;
-  width: 85%;
+  /*border: 1px solid #ddd;
+  border-top: none;*/
+  border: 0;
+  width: 93%;
   display: inline-block;
   white-space: pre-wrap;
-  padding: 3px 4px;
-  margin-top: -2px;
-  font-size: larger;
-}
-
-#notelist li:first-child div {
-  border-top: 1px solid #ddd;
-}
-
-#newnote {
+  padding: 7px;
+  margin-top: 2px;
   font-size: medium;
-  font-weight: bold;
-  padding-left: 24px;
-	position: relative;
-	overflow: auto;
+} /* warning: assigned to add button too*/
+
+#date-edit {
+  text-transform: uppercase;
+  padding-left: 7px;
+  font-size: smaller;
+  letter-spacing: 1.2px;
 }
 /*
-    #noteholder {
-      border: 1px solid #ddd;
-      width: 94%;
-      float: right;
-    }*/
+#notelist li:first-child div {
+  border-top: 1px solid #ddd;
+}*/
 
-/* how to change colors as a user */
 
-li[data-tag="0"] {
-  background-color: transparent;
+
+div[data-tag="0"] {
+  background-color: #f1f1f1;
 }
 
-/* yellow, cyan, pink, gray, green */
 div[data-tag="1"] {
   background-color: #ff0;
+}
+
+div[data-tag="2"] {
+  background-color: rgb(255,131,131);
+}
+
+div[data-tag="3"] {
+  background-color: #00C2FF;
+}
+
+div[data-tag="4"] {
+  background-color: #39B54A;
 }
 
 .note {
@@ -236,4 +234,53 @@ div[data-tag="1"] {
     border-width: 1px;
     border-style: solid;
     border-color: rgba(0,0,0,.2);
+}
+
+#page, #folderForm {
+  margin-top: 70px;
+}
+
+#results {
+  margin-top: 15px;
+}
+
+.result-odd {
+  color: #474747;
+}
+
+.result-even {
+  color: #39B54A;
+}
+
+#searchResults a {
+  color: inherit;
+}
+
+.ontop {
+  z-index: 1500;
+}
+
+#notelist {
+  list-style-type: none;
+  margin-left: -40px;
+  margin-bottom: 2px;
+}
+
+.deleteNote {
+  padding:0;
+}
+
+.highlight-toggle {
+  width: 100%;
+  margin: auto;
+}
+
+.highlight-toggle.btn-primary.active{
+  background-color: #474747;
+  border-color: #393939;
+}
+
+#myModal1.highlight-toggle.btn-primary{
+  background-color: #e9e9e9;
+  border-color: #d7d7d7;
 }

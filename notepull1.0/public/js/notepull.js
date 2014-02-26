@@ -28,12 +28,12 @@ function validateLogin(json) {
 
 	if (json.isUser)
 	{
-		window.location.href = "home.html";
+		window.location.href = "/home";
 	}
 	else {
 		// add error styles!
 		if (!tryAgain1)
-		$('#emailField').before('<h5 style="color:red">Please try again</h5>');
+		$('#loginPrompt').text('Please try again');
 		tryAgain1 = true;
 	}
 }

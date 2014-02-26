@@ -27,7 +27,7 @@ exports.checkLogin = function(req, res) {
 			valid = true;
 		}
 	}
-	
+	console.log({"isUser": valid});
 	res.json({"isUser": valid});
 };
 
@@ -97,10 +97,12 @@ exports.generateRead = function(req, res){
 
 function current_date() {
             var d = new Date();
-            //return d.toDateString();
+            return d.toDateString();
+            /*
             return (d.getMonth()+1) + "/" +
                         d.getDate() + "/" +
                         d.getFullYear();
+                        */
 }
 
 exports.newFolder = function(req, res){
@@ -180,7 +182,7 @@ exports.addNote = function(req, res){
 	//console.log(newnote_id);
 	//console.log(folders[folder_id]);
 	//console.log('/read/' + folder_id + '/' + newnote_id);
-	res.redirect('/read/' + folder_id + '/' + newnote_id);
+	res.redirect('/edit/' + folder_id + '/' + newnote_id);
 };
 
 exports.submitEditNote = function(req, res){
@@ -315,10 +317,8 @@ exports.viewFolder = function(req, res){
 };
 
 exports.viewFolders = function(req, res){
-	// folder json!
-
 	var folders = folderJson;
-//console.log(folders);
 	res.render('home', { 'home': folders, helpers: {setIndex: function(value){
                 this.index = Number(value);}}});
 };
+

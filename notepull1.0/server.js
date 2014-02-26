@@ -16,6 +16,7 @@ var handlebars = require('express3-handlebars');
 
 /* IMPORT ROUTES */
 var index = require('./routes/index');
+var filter = require('./routes/filter');
 // Example route
 // var user = require('./routes/user');
 
@@ -83,6 +84,8 @@ app.post('/move/:folder/:note/:tofolder', index.moveNote);
 app.get('/folder/:folder', index.viewFolder);	// read
 
 app.get('/home', index.viewFolders);			// read all folders
+app.get('/search/:color', filter.searchLines);
+app.get('/search', filter.showSearch);
 
 
 app.get('/readNote', index.getRead); //read sample note
