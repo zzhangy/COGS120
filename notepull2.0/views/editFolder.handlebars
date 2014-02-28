@@ -66,11 +66,13 @@
                           <label for="folder_name">Name:</label>
                           <input id="folder_name" name="folder_name" placeholder="Folder Name" type="text" size="35" class="form-control" value="{{folder_name}}"/>
                         </div>
-                        <span>updated {{last_updated}}</span>
+                        <span style="color: silver;">updated {{last_updated}}</span>
                         <ul>
                         {{#each folder}}
                             <!--<li class="note">{{note}}</li>-->
-                            <li><a class="note_file" href="/edit/{{../id}}/{{@index}}">{{this.title}}</a> <a class="note_file btn btn-default btn-xs" href="/delete/{{../id}}/{{@index}}">x</a></li>
+                            <li class="folder">
+                                <a class="foldertitle" href="/edit/{{../id}}/{{@index}}">{{this.title}}</a> 
+                                <div class="x"><a class="foldertitle" href="/delete/{{../id}}/{{@index}}">x</a></li></div>
                         {{/each}}
                         </ul>
                         <a href="/new/{{id}}" class="btn btn-default">ADD</a>
