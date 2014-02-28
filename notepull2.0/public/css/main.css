@@ -259,9 +259,6 @@ html, body, .container-fluid {
     float: right;
     color: white;
 }
-.foldertitle {
-    text-decoration: none;
-}
 ------------
 Visit twitterbootstrap.org for more tut 
 -------------
@@ -296,29 +293,45 @@ label.error {
   background-color: transparent;
 }
 
+.newfolder {
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 25px;
+    text-align: left;
+    color: #fff;
+    width: 100%;
+}
+.newfolder1 {
+    text-align: left;
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid silver;
+}
 
 .folder{
-  width: 45%;
+  width: 100%;
   text-align: left;
   color: #fff;
   padding: 0;
 }
 
 .folder-content {
-  border: 2px solid #fff;
-  border-bottom: none;
   padding: 2%;
   height: 90px;
 }
 
-.folder-title {
-  font-size: small;
+.foldertitle {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 25px;
+    color: white;
 }
 
 .folder-date {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 15px;
   letter-spacing: 1.1px;
+    color: silver;
 }
 
 .highlights {
@@ -339,17 +352,17 @@ label.error {
 }
 
 .bar-yellow {
-  background-color: #ff0;
+  background-color: DarkOrange;
 }
 
 .bar-red {
-  background-color: rgb(255,131,131);
+  background-color: Crimson;
 }
 
 .bar-blue {
-  background-color: #00C2FF;
+  background-color: Teal;
 }
 
 .bar-green {
-  background-color: #39B54A;
+  background-color: LimeGreen;
 }

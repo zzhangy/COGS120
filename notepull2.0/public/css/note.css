@@ -203,19 +203,19 @@ div[data-tag="0"] {
 }
 
 div[data-tag="1"] {
-  background-color: #ff0;
+  background-color: DarkOrange;
 }
 
 div[data-tag="2"] {
-  background-color: rgb(255,131,131);
+  background-color: Crimson;
 }
 
 div[data-tag="3"] {
-  background-color: #00C2FF;
+  background-color: Teal;
 }
 
 div[data-tag="4"] {
-  background-color: #39B54A;
+  background-color: LimeGreen;
 }
 
 .note {
