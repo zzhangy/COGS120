@@ -27,7 +27,12 @@ textarea {
 
 #done-icon {
 	float: right;
-	color: #39b54a;
+  padding-right:15px;
+	color: LimeGreen;
+}
+#colorsButtonIcon {
+  float: right;
+  margin-left: -5px;
 }
 /* For help popover */
 .popover-example .popover {
@@ -157,7 +162,7 @@ footer {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 40px;
+  height: 45px;
   background-color: #474747;
   padding-top: 13px;
   margin-left: -15px;
@@ -294,3 +299,6 @@ div[data-tag="4"] {
   padding: 0;
 }
 
+.deleteNote {
+  color: #ed1c47;
+}

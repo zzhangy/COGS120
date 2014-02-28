@@ -176,11 +176,8 @@ exports.addNote = function(req, res){
 	var newnote_id = folders[folder_id].folder.length;
 	folders[folder_id].folder.push(json);
 	updateFolderDate(json.date, folder_id);
-	//console.log(json);
-	//console.log(newnote_id);
-	//console.log(folders[folder_id]);
-	//console.log('/read/' + folder_id + '/' + newnote_id);
-	res.redirect('/read/' + folder_id + '/' + newnote_id);
+
+	res.redirect('/edit/' + folder_id + '/' + newnote_id);
 };
 
 exports.submitEditNote = function(req, res){
