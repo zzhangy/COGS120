@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	
+	$(".popover-top").popover('show');
 			/*
 			 *  Simple image gallery. Uses default settings
 			 */

@@ -76,6 +76,7 @@ $('#colorsButton').each(function() {
 
         }
 	});
+	            
 });
 
 /*
