@@ -72,10 +72,6 @@
  */
 
 /* Links */
-a {
-    color: #ed1c47;
-    text-decoration: none;
-}
 
 /*
  * Base structure
@@ -264,8 +260,7 @@ html, body, .container-fluid {
     color: white;
 }
 .foldertitle {
-    font-family: Roboto;
-    font-color: white;
+    text-decoration: none;
 }
 ------------
 Visit twitterbootstrap.org for more tut 
