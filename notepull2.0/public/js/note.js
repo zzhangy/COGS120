@@ -24,6 +24,7 @@ $(document).ready(function() {
 	$(".glyphicon-tag").click(function(){
 	                $("#myModal1").modal('show');
 	            });
+	$(".popover-top").popover('show');
 });
 
 /*

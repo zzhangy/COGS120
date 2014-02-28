@@ -18,13 +18,14 @@
     <link href="css/social-buttons-3.css" rel="stylesheet">
     <!-- Extra Icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
 </head>
 
     <body>
         <div class="container-fluid">
             <!-- SIDEBAR -->
             <div class="row">
-                <div class="col-sm-2 col-md-1 sidebar">
+                <!--<div class="col-sm-2 col-md-1 sidebar">
                     <ul class="nav nav-sidebar">
                         <li><span style="color: white;font-family:Helvetica; font-size: 150%;">note </span><span style="font-size:350%; font-family: Ostrich Sans; color:#39B54A;">PULL</span></li>
                         <li><a href="new.html"><i class="fa fa-plus fa-3x"></i><br/>NEW</a></li>
@@ -33,29 +34,38 @@
                         <li><a href="help.html"><i class="glyphicon glyphicon-question-sign iconav"></i><br/>HELP</a></li>
                         <li><a href="index.html"><i class="glyphicon glyphicon-log-out iconav"></i><br/>LOGOUT</a></li>
                     </ul>
-                </div>
+                </div>-->
             <!-- this is the other column in the code -->
-            <ul class="nav nav-tabs">
+            <!--<ul class="nav nav-tabs">
                 <li class="active">
-                    <a href="#">Profile</a>
+                    <h2>Settings</h2>
                     <form class="form-signin" role="form">
-                        <input type="email" class="form-control" placeholder="a@a.a" required="" autofocus="">
-                        <input type="password" class="form-control" placeholder="Password" required="">
-                        <input type="password" class="form-control" placeholder="Retype Password" required="">
+                        <div class="hidden" id="uh"><input type="name" class="form-control" placeholder="Name" required="" id="nameField"></div>
+                        <input type="email" class="form-control" placeholder="a@a.a" required="" id="emailField">
+                        <br>
+                        <input type="password" class="form-control" placeholder="Password" required="" id="passwordField"><br>
+                        <input type="password" class="form-control" placeholder="Retype password" required="" id="passwordField"><br>
+                        <a href="landing.html" class="btn btn-lg btn-primary btn-block" id="loginButton" type="submit" style="font-family:'Roboto'; color:white;">Save</a>
                     </form>
-                    
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-1">
-                        <button type="submit" class="btn btn-default">Save</button>
-                        </div>
-                    </div>
                 </li>
-            </ul>
-            <div class="mastfoot">
-                    <div class="inner">
-                        <p style="color: black; text-align: center;">Created by Anindya Basu, Helena Qin, Yalin Zhang using <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
-                    </div>
-                </div>
+            </ul>-->
+            <div class="col-xs-6 col-sm-9 col-md-10 main">
+                <a href="/landing"> <img src="/img/notepulllogofolders.png" width=310px /a>
+                        <a href="/new">
+                            <img src="/img/settings.png" width=310px/>
+                        </a>
+                <li class="active">
+                    <form class="form-signin" role="form">
+                        <div class="hidden" id="uh"><input type="name" class="form-control" placeholder="Name" required="" id="nameField"></div>
+                        <input type="email" class="form-control" placeholder="a@a.a" required="" id="emailField">
+                        <br>
+                        <input type="password" class="form-control" placeholder="Password" required="" id="passwordField"><br>
+                        <input type="password" class="form-control" placeholder="Retype password" required="" id="passwordField"><br>
+                        <a href="landing.html" class="btn btn-lg btn-primary btn-block" id="loginButton" type="submit" style="font-family:'Roboto'; color:white;">Save</a>
+                    </form>
+                </li>
+            <!-- END COPY PASTE HERE FOR SIDE BAR CODE -->
+            </div>
             </div>
             <!-- END COPY PASTE HERE FOR SIDE BAR CODE -->
         </div>
