@@ -298,3 +298,61 @@ label.error {
 .landing > .nav > li > a:hover {
   background-color: transparent;
 }
+
+
+.folder{
+  width: 45%;
+  text-align: left;
+  color: #fff;
+  padding: 0;
+}
+
+.folder-content {
+  border: 2px solid #fff;
+  border-bottom: none;
+  padding: 2%;
+  height: 90px;
+}
+
+.folder-title {
+  font-size: small;
+}
+
+.folder-date {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1.1px;
+}
+
+.highlights {
+  height: 10px;
+  background-color: #ff0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.highlights div {
+  width:25%;
+  height: 100%;
+  display: block;
+  float: left;
+  margin: 0;
+  padding:0;
+}
+
+.bar-yellow {
+  background-color: #ff0;
+}
+
+.bar-red {
+  background-color: rgb(255,131,131);
+}
+
+.bar-blue {
+  background-color: #00C2FF;
+}
+
+.bar-green {
+  background-color: #39B54A;
+}

@@ -23,17 +23,47 @@
             <!-- COPY AND PASTE THIS FOR THE SIDE BAR CODE -->
             <div class="row">
             <!-- this is the other column in the code -->
-            <div class="col-xs-6 col-sm-9 col-md-10 main">
+            <div class="col-xs-12 col-sm-9 col-md-10 main">
                 <img src="/img/notepulllogofolders.png" width=310px />
+                <div class="btn-group sortControl" id="sortFoldersControl">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span id="sortFoldersButton">Sort By</span><span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="/sort/alpha" data-order="alpha">Title: A-Z</a></li>
+                            <li><a href="/sort/alphadesc" data-order="alphadesc">Title: Z-A</a></li>
+                            <li><a href="/sort/latest" data-order="latest">Date: Latest</a></li>
+                            <li><a href="/sort/oldest" data-order="oldest">Date: Oldest</a></li>
+                          </ul>
+                    </div> 
                         <a href="/new">
                             <img src="/img/newfolder.png" width=310px/>
                         </a>
                         
                         {{#each home.folders}}
-                        
-                <span class="folder">
-                    <h2><a href="#{{@index}}"><span class="foldertitle"> {{this.folder_name}}<br/><small><i class="fa fa-calendar"></i> {{this.last_updated}}</small></span></a></li></a></h2>
-                </span>
+                <div class="folder">
+                    <div class="folder-content">
+                    <a href="/edit/{{@index}}"><span class="folder-title"> {{this.folder_name}}</span><br/><span class="folder-date">{{this.last_updated}}</span></a>
+                </div>
+                <div class="highlights">
+                    <div class="bar-red"></div>
+                    <div class="bar-yellow"></div>
+                    <div class="bar-blue"></div>
+                    <div class="bar-green"></div>
+                </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <!-- Modal HTML -->
                         <!-- THIS MODAL IS TO OPEN AN ALREADY EXISTING FOLDER -->
                         <div id="{{@index}}" class="modal fade">

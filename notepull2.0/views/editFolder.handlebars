@@ -61,6 +61,16 @@
                         <a href="#"><span class="glyphicon glyphicon-indent-left"></span></a>
                         <a href="read.html" id="submitNote"><span class="glyphicon glyphicon-ok" id="done-icon"></span></a>
                     </div>-->
+                    <div class="btn-group sortControl" id="sortNotesControl">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span id="sortNotesButton">Sort By</span><span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="/sort/{{id}}/alpha" data-order="alpha">Title: A-Z</a></li>
+                            <li><a href="/sort/{{id}}/alphadesc" data-order="alphadesc">Title: Z-A</a></li>
+                            <li><a href="/sort/{{id}}/latest" data-order="latest">Date: Latest</a></li>
+                            <li><a href="/sort/{{id}}/oldest" data-order="oldest">Date: Oldest</a></li>
+                          </ul>
+                    </div> 
                     <form id="folderForm" action="/edit/{{id}}" method="POST">
                         <div class="form-group">
                           <label for="folder_name">Name:</label>
